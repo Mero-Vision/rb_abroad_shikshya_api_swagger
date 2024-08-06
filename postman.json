@@ -1,0 +1,50 @@
+{
+  "info": {
+    "_postman_id": "09a3c016-a680-4168-8811-d665903ee04e",
+    "name": "RB Abroads",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36246021",
+    "_collection_link": "https://mero-vision.postman.co/workspace/Team-Workspace~1395415a-98af-4bc5-853c-6265c2c2d0cd/collection/36246021-09a3c016-a680-4168-8811-d665903ee04e?action=share&source=collection_link&creator=36246021"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "super admin login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "superadmin@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "password",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/super-admin-login",
+              "host": ["{{url}}"],
+              "path": ["api", "super-admin-login"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
