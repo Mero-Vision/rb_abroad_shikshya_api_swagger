@@ -8,7 +8,7 @@
 
 3. Run `make doc` in terminal to generate openApi.
 
-# 4. View Api in : https://scodus.github.io/hospitality_swagger/
+# 4. View Api in : https://mero-vision.github.io/rb_abroad_shikshya_api_swagger/
 
 #### Reference `https://joolfe.github.io/postman-to-openapi/`
 
