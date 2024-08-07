@@ -88,9 +88,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{url}}/api/super-admin/user/{user_id}",
+                  "raw": "{{url}}/api/super-admin/user/1",
                   "host": ["{{url}}"],
-                  "path": ["api", "super-admin", "user", "{user_id}"]
+                  "path": ["api", "super-admin", "user", "1"]
                 }
               },
               "response": []
@@ -140,6 +140,60 @@
                   "raw": "{{url}}/api/super-admin/change-password",
                   "host": ["{{url}}"],
                   "path": ["api", "super-admin", "change-password"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update user details",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Hancie Phago",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "superadmin@gmail.com",
+                      "type": "text"
+                    },
+                    {
+                      "key": "profile_image",
+                      "type": "file",
+                      "src": "fiPTzrLfO/gray minimalist group chat logo.png"
+                    },
+                    {
+                      "key": "_method",
+                      "value": "PUT",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/super-admin/user/{id}",
+                  "host": ["{{url}}"],
+                  "path": ["api", "super-admin", "user", "{id}"]
                 }
               },
               "response": []
