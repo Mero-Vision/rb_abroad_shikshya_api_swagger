@@ -64,6 +64,40 @@
           ]
         },
         {
+          "name": "User Data",
+          "item": [
+            {
+              "name": "show single user data",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/user/1",
+                  "host": ["{{url}}"],
+                  "path": ["api", "user", "1"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
           "name": "Site Setting",
           "item": [
             {
@@ -93,6 +127,36 @@
                     {
                       "key": "site_title",
                       "value": "hy",
+                      "type": "text"
+                    },
+                    {
+                      "key": "app_logo",
+                      "value": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "fav_icon",
+                      "value": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "phone_no",
+                      "value": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "mobile_no",
+                      "value": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "address",
+                      "value": "",
                       "type": "text"
                     }
                   ]
@@ -183,9 +247,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{url}}/api/master-data/countries",
+                  "raw": "{{url}}/api/master-data/country-list",
                   "host": ["{{url}}"],
-                  "path": ["api", "master-data", "countries"]
+                  "path": ["api", "master-data", "country-list"]
                 }
               },
               "response": []

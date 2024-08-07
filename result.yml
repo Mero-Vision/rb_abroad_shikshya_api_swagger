@@ -26,6 +26,7 @@ components:
 tags:
   - name: Super Admin
   - name: Super Admin > Authentication
+  - name: Super Admin > User Data
   - name: Super Admin > Site Setting
   - name: Super Admin > Master Data
   - name: Super Admin > Country Master Data
@@ -59,6 +60,24 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/user/1:
+    get:
+      tags:
+        - Super Admin > User Data
+      summary: show single user data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/site-settings:
     post:
       tags:
@@ -73,6 +92,18 @@ paths:
                 site_title:
                   type: string
                   example: hy
+                app_logo:
+                  type: string
+                fav_icon:
+                  type: string
+                email:
+                  type: string
+                phone_no:
+                  type: string
+                mobile_no:
+                  type: string
+                address:
+                  type: string
       security:
         - bearerAuth: []
       parameters:
@@ -121,7 +152,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/master-data/countries:
+  /api/master-data/country-list:
     get:
       tags:
         - Super Admin > Master Data
