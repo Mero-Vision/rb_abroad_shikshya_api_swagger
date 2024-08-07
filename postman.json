@@ -8,121 +8,265 @@
   },
   "item": [
     {
-      "name": "Authentication",
+      "name": "Super Admin",
       "item": [
         {
-          "name": "super admin login",
-          "event": [
+          "name": "Authentication",
+          "item": [
             {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "const response = pm.response.json()",
-                  "pm.environment.set('token', response.data.token)",
-                  "pm.environment.set('refresh_token', response.data.refresh_token)"
+              "name": "super admin login",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "const response = pm.response.json()",
+                      "pm.environment.set('token', response.data.token)",
+                      "pm.environment.set('refresh_token', response.data.refresh_token)"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
                 ],
-                "type": "text/javascript",
-                "packages": {}
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "formdata",
-              "formdata": [
-                {
-                  "key": "email",
-                  "value": "superadmin@gmail.com",
-                  "type": "text"
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "email",
+                      "value": "superadmin@gmail.com",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "password",
+                      "type": "text"
+                    }
+                  ]
                 },
-                {
-                  "key": "password",
-                  "value": "password",
-                  "type": "text"
+                "url": {
+                  "raw": "{{url}}/api/super-admin-login",
+                  "host": ["{{url}}"],
+                  "path": ["api", "super-admin-login"]
                 }
-              ]
-            },
-            "url": {
-              "raw": "{{url}}/api/super-admin-login",
-              "host": ["{{url}}"],
-              "path": ["api", "super-admin-login"]
+              },
+              "response": []
             }
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "name": "Site Setting",
-      "item": [
-        {
-          "name": "Store Site Setting",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": [
-                {
-                  "key": "token",
-                  "value": "{{token}}",
-                  "type": "string"
-                }
-              ]
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "formdata",
-              "formdata": [
-                {
-                  "key": "site_title",
-                  "value": "hy",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": {
-              "raw": "{{url}}/api/site-settings",
-              "host": ["{{url}}"],
-              "path": ["api", "site-settings"]
-            }
-          },
-          "response": []
+          ]
         },
         {
-          "name": "show all site settings data",
-          "request": {
-            "auth": {
-              "type": "bearer"
+          "name": "Site Setting",
+          "item": [
+            {
+              "name": "Store Site Setting",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "site_title",
+                      "value": "hy",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/site-settings",
+                  "host": ["{{url}}"],
+                  "path": ["api", "site-settings"]
+                }
+              },
+              "response": []
             },
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "{{url}}/api/site-settings",
-              "host": ["{{url}}"],
-              "path": ["api", "site-settings"]
+            {
+              "name": "show all site settings data",
+              "request": {
+                "auth": {
+                  "type": "bearer"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/site-settings",
+                  "host": ["{{url}}"],
+                  "path": ["api", "site-settings"]
+                }
+              },
+              "response": []
             }
-          },
-          "response": []
+          ]
+        },
+        {
+          "name": "Master Data",
+          "item": [
+            {
+              "name": "gender master data",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/master-data/genders",
+                  "host": ["{{url}}"],
+                  "path": ["api", "master-data", "genders"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "country list",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/master-data/countries",
+                  "host": ["{{url}}"],
+                  "path": ["api", "master-data", "countries"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Country Master Data",
+          "item": [
+            {
+              "name": "Nepal",
+              "item": [
+                {
+                  "name": "Nepal Province with district list",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/master-data/countries/nepal",
+                      "host": ["{{url}}"],
+                      "path": ["api", "master-data", "countries", "nepal"]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "municipality list",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/master-data/countries/nepal/province/districts/{district_id}",
+                      "host": ["{{url}}"],
+                      "path": [
+                        "api",
+                        "master-data",
+                        "countries",
+                        "nepal",
+                        "province",
+                        "districts",
+                        "{district_id}"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            }
+          ]
         }
       ]
     }
