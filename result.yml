@@ -18,8 +18,14 @@ info:
 servers:
   - url: https://api.rbabroads.com/
     description: server
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
 tags:
   - name: Authentication
+  - name: Site Setting
 paths:
   /api/super-admin-login:
     post:
@@ -38,6 +44,50 @@ paths:
                 password:
                   type: string
                   example: password
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/site-settings:
+    post:
+      tags:
+        - Site Setting
+      summary: Store Site Setting
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                site_title:
+                  type: string
+                  example: hy
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Site Setting
+      summary: show all site settings data
+      security:
+        - bearerAuth: []
       parameters:
         - name: Accept
           in: header

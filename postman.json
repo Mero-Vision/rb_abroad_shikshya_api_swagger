@@ -12,6 +12,20 @@
       "item": [
         {
           "name": "super admin login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const response = pm.response.json()",
+                  "pm.environment.set('token', response.data.token)",
+                  "pm.environment.set('refresh_token', response.data.refresh_token)"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
           "request": {
             "method": "POST",
             "header": [
@@ -40,6 +54,72 @@
               "raw": "{{url}}/api/super-admin-login",
               "host": ["{{url}}"],
               "path": ["api", "super-admin-login"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Site Setting",
+      "item": [
+        {
+          "name": "Store Site Setting",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "site_title",
+                  "value": "hy",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/site-settings",
+              "host": ["{{url}}"],
+              "path": ["api", "site-settings"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show all site settings data",
+          "request": {
+            "auth": {
+              "type": "bearer"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/site-settings",
+              "host": ["{{url}}"],
+              "path": ["api", "site-settings"]
             }
           },
           "response": []
