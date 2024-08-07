@@ -60,11 +60,49 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/user/1:
+  /api/super-admin/user/{user_id}:
     get:
       tags:
         - Super Admin > User Data
       summary: show single user data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: user_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/change-password:
+    post:
+      tags:
+        - Super Admin > User Data
+      summary: change password
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                current_password:
+                  type: string
+                  example: fdgg
+                password:
+                  type: integer
+                  example: '12345678'
+                password_confirmation:
+                  type: integer
+                  example: '12345678'
       security:
         - bearerAuth: []
       parameters:
@@ -78,7 +116,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/site-settings:
+  /api/super-admin/site-settings:
     post:
       tags:
         - Super Admin > Site Setting
@@ -134,7 +172,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/master-data/genders:
+  /api/super-admin/master-data/genders:
     get:
       tags:
         - Super Admin > Master Data
@@ -152,7 +190,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/master-data/country-list:
+  /api/super-admin/master-data/country-list:
     get:
       tags:
         - Super Admin > Master Data
@@ -170,7 +208,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/master-data/countries/nepal:
+  /api/super-admin/master-data/countries/nepal:
     get:
       tags:
         - Super Admin > Country Master Data > Nepal
@@ -188,7 +226,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/master-data/countries/nepal/province/districts/{district_id}:
+  /api/super-admin/master-data/countries/nepal/province/districts/{district_id}:
     get:
       tags:
         - Super Admin > Country Master Data > Nepal

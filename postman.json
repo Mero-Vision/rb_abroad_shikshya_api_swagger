@@ -88,9 +88,58 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{url}}/api/user/1",
+                  "raw": "{{url}}/api/super-admin/user/{user_id}",
                   "host": ["{{url}}"],
-                  "path": ["api", "user", "1"]
+                  "path": ["api", "super-admin", "user", "{user_id}"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "change password",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "current_password",
+                      "value": "fdgg",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "12345678",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password_confirmation",
+                      "value": "12345678",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/super-admin/change-password",
+                  "host": ["{{url}}"],
+                  "path": ["api", "super-admin", "change-password"]
                 }
               },
               "response": []
@@ -162,9 +211,9 @@
                   ]
                 },
                 "url": {
-                  "raw": "{{url}}/api/site-settings",
+                  "raw": "{{url}}/api/super-admin/site-settings",
                   "host": ["{{url}}"],
-                  "path": ["api", "site-settings"]
+                  "path": ["api", "super-admin", "site-settings"]
                 }
               },
               "response": []
@@ -173,7 +222,14 @@
               "name": "show all site settings data",
               "request": {
                 "auth": {
-                  "type": "bearer"
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
                 },
                 "method": "GET",
                 "header": [
@@ -184,9 +240,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{url}}/api/site-settings",
+                  "raw": "{{url}}/api/super-admin/site-settings",
                   "host": ["{{url}}"],
-                  "path": ["api", "site-settings"]
+                  "path": ["api", "super-admin", "site-settings"]
                 }
               },
               "response": []
@@ -218,9 +274,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{url}}/api/master-data/genders",
+                  "raw": "{{url}}/api/super-admin/master-data/genders",
                   "host": ["{{url}}"],
-                  "path": ["api", "master-data", "genders"]
+                  "path": ["api", "super-admin", "master-data", "genders"]
                 }
               },
               "response": []
@@ -247,9 +303,9 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{url}}/api/master-data/country-list",
+                  "raw": "{{url}}/api/super-admin/master-data/country-list",
                   "host": ["{{url}}"],
-                  "path": ["api", "master-data", "country-list"]
+                  "path": ["api", "super-admin", "master-data", "country-list"]
                 }
               },
               "response": []
@@ -284,9 +340,15 @@
                       }
                     ],
                     "url": {
-                      "raw": "{{url}}/api/master-data/countries/nepal",
+                      "raw": "{{url}}/api/super-admin/master-data/countries/nepal",
                       "host": ["{{url}}"],
-                      "path": ["api", "master-data", "countries", "nepal"]
+                      "path": [
+                        "api",
+                        "super-admin",
+                        "master-data",
+                        "countries",
+                        "nepal"
+                      ]
                     }
                   },
                   "response": []
@@ -313,10 +375,11 @@
                       }
                     ],
                     "url": {
-                      "raw": "{{url}}/api/master-data/countries/nepal/province/districts/{district_id}",
+                      "raw": "{{url}}/api/super-admin/master-data/countries/nepal/province/districts/{district_id}",
                       "host": ["{{url}}"],
                       "path": [
                         "api",
+                        "super-admin",
                         "master-data",
                         "countries",
                         "nepal",
