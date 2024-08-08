@@ -33,6 +33,7 @@ tags:
   - name: Super Admin > Country Master Data > Nepal
   - name: Super Admin > Company
   - name: Super Admin > University Application Period
+  - name: Super Admin > Universities
 paths:
   /api/super-admin-login:
     post:
@@ -401,6 +402,88 @@ paths:
           schema:
             type: string
           example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/university:
+    post:
+      tags:
+        - Super Admin > Universities
+      summary: Create Universities
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                university_name:
+                  type: string
+                  example: Yorkville University - Toronto
+                country:
+                  type: string
+                  example: Canada
+                country_code:
+                  type: string
+                  example: CA
+                province:
+                  type: string
+                  example: Ontario
+                city:
+                  type: string
+                  example: Toronto
+                university_logo:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Super Admin > Universities
+      summary: Show all university list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/university/{slug}:
+    get:
+      tags:
+        - Super Admin > Universities
+      summary: show single university detail
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: Successful response

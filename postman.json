@@ -649,6 +649,133 @@
               "response": []
             }
           ]
+        },
+        {
+          "name": "Universities",
+          "item": [
+            {
+              "name": "Create Universities",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "university_name",
+                      "value": "Yorkville University - Toronto",
+                      "type": "text"
+                    },
+                    {
+                      "key": "country",
+                      "value": "Canada",
+                      "type": "text"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "CA",
+                      "type": "text"
+                    },
+                    {
+                      "key": "province",
+                      "value": "Ontario",
+                      "type": "text"
+                    },
+                    {
+                      "key": "city",
+                      "value": "Toronto",
+                      "type": "text"
+                    },
+                    {
+                      "key": "university_logo",
+                      "type": "file",
+                      "src": "5S4hRdN40/ICON Png.png"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/super-admin/university",
+                  "host": ["{{url}}"],
+                  "path": ["api", "super-admin", "university"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Show all university list",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/super-admin/university",
+                  "host": ["{{url}}"],
+                  "path": ["api", "super-admin", "university"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "show single university detail",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/super-admin/university/{slug}",
+                  "host": ["{{url}}"],
+                  "path": ["api", "super-admin", "university", "{slug}"]
+                }
+              },
+              "response": []
+            }
+          ]
         }
       ]
     }
