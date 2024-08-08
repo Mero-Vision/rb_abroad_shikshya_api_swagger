@@ -810,6 +810,138 @@
               "response": []
             }
           ]
+        },
+        {
+          "name": "CMS",
+          "item": [
+            {
+              "name": "Contact Us",
+              "item": [
+                {
+                  "name": "store contact us",
+                  "request": {
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "name",
+                          "value": "Hancie Phago",
+                          "type": "text"
+                        },
+                        {
+                          "key": "email",
+                          "value": "hanciephago@gmail.com",
+                          "type": "text"
+                        },
+                        {
+                          "key": "mobile_no",
+                          "value": "9825915122",
+                          "type": "text"
+                        },
+                        {
+                          "key": "subject",
+                          "value": "hy",
+                          "type": "text"
+                        },
+                        {
+                          "key": "message",
+                          "value": "hy",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/contact-us",
+                      "host": ["{{url}}"],
+                      "path": ["api", "contact-us"]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "show all contact us list",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "",
+                        "type": "text"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/super-admin/cms/contact-us?pagination_limit=5",
+                      "host": ["{{url}}"],
+                      "path": ["api", "super-admin", "cms", "contact-us"],
+                      "query": [
+                        {
+                          "key": "pagination_limit",
+                          "value": "5"
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "delete contact us data",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/super-admin/cms/contact-us/{contact_id}",
+                      "host": ["{{url}}"],
+                      "path": [
+                        "api",
+                        "super-admin",
+                        "cms",
+                        "contact-us",
+                        "{contact_id}"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            }
+          ]
         }
       ]
     }

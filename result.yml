@@ -23,6 +23,9 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
+    noauthAuth:
+      type: http
+      scheme: noauth
 tags:
   - name: Super Admin
   - name: Super Admin > Authentication
@@ -34,6 +37,8 @@ tags:
   - name: Super Admin > Company
   - name: Super Admin > University Application Period
   - name: Super Admin > Universities
+  - name: Super Admin > CMS
+  - name: Super Admin > CMS > Contact Us
 paths:
   /api/super-admin-login:
     post:
@@ -498,6 +503,90 @@ paths:
             type: string
           example: application/json
         - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/contact-us:
+    post:
+      tags:
+        - Super Admin > CMS > Contact Us
+      summary: store contact us
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Hancie Phago
+                email:
+                  type: string
+                  example: hanciephago@gmail.com
+                mobile_no:
+                  type: integer
+                  example: '9825915122'
+                subject:
+                  type: string
+                  example: hy
+                message:
+                  type: string
+                  example: hy
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/cms/contact-us:
+    get:
+      tags:
+        - Super Admin > CMS > Contact Us
+      summary: show all contact us list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+        - name: pagination_limit
+          in: query
+          schema:
+            type: integer
+          example: '5'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/cms/contact-us/{contact_id}:
+    delete:
+      tags:
+        - Super Admin > CMS > Contact Us
+      summary: delete contact us data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: contact_id
           in: path
           schema:
             type: string
