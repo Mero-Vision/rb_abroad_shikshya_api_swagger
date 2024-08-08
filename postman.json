@@ -448,6 +448,173 @@
               ]
             }
           ]
+        },
+        {
+          "name": "Company",
+          "item": [
+            {
+              "name": "Company get api",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/super-admin/company",
+                  "host": ["{{url}}"],
+                  "path": ["api", "super-admin", "company"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "show single company details",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/super-admin/company/{company_id}",
+                  "host": ["{{url}}"],
+                  "path": ["api", "super-admin", "company", "{company_id}"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update company",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "company_name",
+                      "value": "R.B. Abroad Shikshya Pvt. Ltd.",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "phone_no",
+                      "value": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "mobile_no",
+                      "value": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "country",
+                      "value": "Nepal",
+                      "type": "text"
+                    },
+                    {
+                      "key": "province",
+                      "value": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "district",
+                      "value": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "municipality",
+                      "value": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "street_address",
+                      "value": "Bhadrapur Road, Birtamode",
+                      "type": "text"
+                    },
+                    {
+                      "key": "vat_no",
+                      "value": "654647567",
+                      "type": "text"
+                    },
+                    {
+                      "key": "registration_number",
+                      "value": "54657657567",
+                      "type": "text"
+                    },
+                    {
+                      "key": "website",
+                      "value": "rbabroads.com",
+                      "type": "text"
+                    },
+                    {
+                      "key": "company_logo",
+                      "type": "file",
+                      "src": []
+                    },
+                    {
+                      "key": "_method",
+                      "value": "PUT",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/super-admin/company/1",
+                  "host": ["{{url}}"],
+                  "path": ["api", "super-admin", "company", "1"]
+                }
+              },
+              "response": []
+            }
+          ]
         }
       ]
     }

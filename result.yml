@@ -31,6 +31,7 @@ tags:
   - name: Super Admin > Master Data
   - name: Super Admin > Country Master Data
   - name: Super Admin > Country Master Data > Nepal
+  - name: Super Admin > Company
 paths:
   /api/super-admin-login:
     post:
@@ -280,6 +281,107 @@ paths:
           schema:
             type: string
           required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/company:
+    get:
+      tags:
+        - Super Admin > Company
+      summary: Company get api
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/company/{company_id}:
+    get:
+      tags:
+        - Super Admin > Company
+      summary: show single company details
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: company_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/company/1:
+    post:
+      tags:
+        - Super Admin > Company
+      summary: update company
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                company_name:
+                  type: string
+                  example: R.B. Abroad Shikshya Pvt. Ltd.
+                email:
+                  type: string
+                phone_no:
+                  type: string
+                mobile_no:
+                  type: string
+                country:
+                  type: string
+                  example: Nepal
+                province:
+                  type: string
+                district:
+                  type: string
+                municipality:
+                  type: string
+                street_address:
+                  type: string
+                  example: Bhadrapur Road, Birtamode
+                vat_no:
+                  type: integer
+                  example: '654647567'
+                registration_number:
+                  type: integer
+                  example: '54657657567'
+                website:
+                  type: string
+                  example: rbabroads.com
+                company_logo:
+                  type: string
+                  format: binary
+                _method:
+                  type: string
+                  example: PUT
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
       responses:
         '200':
           description: Successful response
