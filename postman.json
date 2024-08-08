@@ -363,6 +363,14 @@
                 }
               },
               "response": []
+            },
+            {
+              "name": "education levels",
+              "request": {
+                "method": "GET",
+                "header": []
+              },
+              "response": []
             }
           ]
         },
