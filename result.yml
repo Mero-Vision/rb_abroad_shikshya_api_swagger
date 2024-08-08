@@ -32,6 +32,7 @@ tags:
   - name: Super Admin > Country Master Data
   - name: Super Admin > Country Master Data > Nepal
   - name: Super Admin > Company
+  - name: Super Admin > University Application Period
 paths:
   /api/super-admin-login:
     post:
@@ -374,6 +375,24 @@ paths:
                 _method:
                   type: string
                   example: PUT
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/application-periods:
+    get:
+      tags:
+        - Super Admin > University Application Period
+      summary: get the list of university application period
       security:
         - bearerAuth: []
       parameters:

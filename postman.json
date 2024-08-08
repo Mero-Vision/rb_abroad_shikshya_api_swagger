@@ -615,6 +615,40 @@
               "response": []
             }
           ]
+        },
+        {
+          "name": "University Application Period",
+          "item": [
+            {
+              "name": "get the list of university application period",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/super-admin/application-periods",
+                  "host": ["{{url}}"],
+                  "path": ["api", "super-admin", "application-periods"]
+                }
+              },
+              "response": []
+            }
+          ]
         }
       ]
     }
