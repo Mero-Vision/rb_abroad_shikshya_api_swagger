@@ -247,6 +247,24 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/super-admin/master-data/education-levels:
+    get:
+      tags:
+        - Super Admin > Master Data
+      summary: education levels
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/super-admin/master-data/countries/nepal:
     get:
       tags:
