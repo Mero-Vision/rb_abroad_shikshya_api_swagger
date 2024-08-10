@@ -31,6 +31,8 @@ tags:
   - name: Super Admin > Authentication
   - name: Super Admin > User Data
   - name: Super Admin > Site Setting
+  - name: Super Admin > Site Setting > About CEO
+  - name: Super Admin > Site Setting > Website Banner Statistics
   - name: Super Admin > Master Data
   - name: Super Admin > Country Master Data
   - name: Super Admin > Country Master Data > Nepal
@@ -72,7 +74,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/super-admin/user/1:
+  /api/super-admin/user/{id}:
     get:
       tags:
         - Super Admin > User Data
@@ -85,6 +87,48 @@ paths:
           schema:
             type: string
           example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Super Admin > User Data
+      summary: update user details
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Hancie Phago5
+                profile_image:
+                  type: string
+                  format: binary
+                _method:
+                  type: string
+                  example: PUT
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: Successful response
@@ -118,44 +162,6 @@ paths:
           schema:
             type: string
           example: application/json
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api/super-admin/user/{id}:
-    post:
-      tags:
-        - Super Admin > User Data
-      summary: update user details
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  example: Hancie Phago5
-                profile_image:
-                  type: string
-                  format: binary
-                _method:
-                  type: string
-                  example: PUT
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: Accept
-          in: header
-          schema:
-            type: string
-          example: application/json
-        - name: id
-          in: path
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: Successful response
@@ -353,7 +359,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/super-admin/company/1:
+  /api/super-admin/company/{id}:
     post:
       tags:
         - Super Admin > Company
@@ -408,6 +414,11 @@ paths:
           schema:
             type: string
           example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: Successful response
