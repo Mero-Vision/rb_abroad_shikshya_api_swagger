@@ -31,8 +31,6 @@ tags:
   - name: Super Admin > Authentication
   - name: Super Admin > User Data
   - name: Super Admin > Site Setting
-  - name: Super Admin > Site Setting > About CEO
-  - name: Super Admin > Site Setting > Website Banner Statistics
   - name: Super Admin > Master Data
   - name: Super Admin > Country Master Data
   - name: Super Admin > Country Master Data > Nepal
@@ -42,6 +40,8 @@ tags:
   - name: Super Admin > CMS
   - name: Super Admin > CMS > Contact Us
   - name: Super Admin > CMS > Blog
+  - name: Super Admin > CMS > Website Banner Statistics
+  - name: Super Admin > CMS > About CEO
   - name: Website
   - name: Website > Contact Us
   - name: Website > Blog
@@ -170,29 +170,26 @@ paths:
   /api/super-admin/site-settings:
     post:
       tags:
-        - Super Admin > Site Setting
-      summary: Store Site Setting
+        - Super Admin > CMS > About CEO
+      summary: store ceo detail
       requestBody:
         content:
           multipart/form-data:
             schema:
               type: object
               properties:
-                site_title:
+                ceo_name:
                   type: string
-                  example: hy
-                app_logo:
+                  example: Rochak Bhattrai
+                ceo_message:
                   type: string
-                fav_icon:
+                  example: hfghghh
+                ceo_image:
                   type: string
-                email:
+                  format: binary
+                settingable_type:
                   type: string
-                phone_no:
-                  type: string
-                mobile_no:
-                  type: string
-                address:
-                  type: string
+                  example: CEO
       security:
         - bearerAuth: []
       parameters:
@@ -208,8 +205,8 @@ paths:
             application/json: {}
     get:
       tags:
-        - Super Admin > Site Setting
-      summary: show all site settings data
+        - Super Admin > CMS > About CEO
+      summary: show about consultancy CEO
       security:
         - bearerAuth: []
       parameters:
@@ -218,6 +215,11 @@ paths:
           schema:
             type: string
           example: application/json
+        - name: settingable_type
+          in: query
+          schema:
+            type: string
+          example: CEO
       responses:
         '200':
           description: Successful response

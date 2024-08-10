@@ -199,271 +199,6 @@
           "name": "Site Setting",
           "item": [
             {
-              "name": "About CEO",
-              "item": [
-                {
-                  "name": "store ceo detail",
-                  "request": {
-                    "auth": {
-                      "type": "bearer",
-                      "bearer": [
-                        {
-                          "key": "token",
-                          "value": "{{token}}",
-                          "type": "string"
-                        }
-                      ]
-                    },
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
-                      }
-                    ],
-                    "body": {
-                      "mode": "formdata",
-                      "formdata": [
-                        {
-                          "key": "ceo_name",
-                          "value": "Rochak Bhattrai",
-                          "type": "text"
-                        },
-                        {
-                          "key": "ceo_message",
-                          "value": "hfghghh",
-                          "type": "text"
-                        },
-                        {
-                          "key": "ceo_image",
-                          "type": "file",
-                          "src": "dgiEbxJqy/ICON Png.png"
-                        },
-                        {
-                          "key": "settingable_type",
-                          "value": "CEO",
-                          "type": "text"
-                        }
-                      ]
-                    },
-                    "url": {
-                      "raw": "{{url}}/api/super-admin/site-settings",
-                      "host": ["{{url}}"],
-                      "path": ["api", "super-admin", "site-settings"]
-                    }
-                  },
-                  "response": []
-                },
-                {
-                  "name": "show about consultancy CEO",
-                  "request": {
-                    "auth": {
-                      "type": "bearer",
-                      "bearer": [
-                        {
-                          "key": "token",
-                          "value": "{{token}}",
-                          "type": "string"
-                        }
-                      ]
-                    },
-                    "method": "GET",
-                    "header": [
-                      {
-                        "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
-                      }
-                    ],
-                    "url": {
-                      "raw": "{{url}}/api/super-admin/site-settings?settingable_type=CEO",
-                      "host": ["{{url}}"],
-                      "path": ["api", "super-admin", "site-settings"],
-                      "query": [
-                        {
-                          "key": "settingable_type",
-                          "value": "CEO"
-                        }
-                      ]
-                    }
-                  },
-                  "response": []
-                }
-              ]
-            },
-            {
-              "name": "Website Banner Statistics",
-              "item": [
-                {
-                  "name": "store website banner statistics",
-                  "request": {
-                    "auth": {
-                      "type": "bearer",
-                      "bearer": [
-                        {
-                          "key": "token",
-                          "value": "{{token}}",
-                          "type": "string"
-                        }
-                      ]
-                    },
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
-                      }
-                    ],
-                    "body": {
-                      "mode": "formdata",
-                      "formdata": [
-                        {
-                          "key": "assurance_count",
-                          "value": "100%",
-                          "type": "text"
-                        },
-                        {
-                          "key": "student_count",
-                          "value": "20",
-                          "type": "text"
-                        },
-                        {
-                          "key": "success_rate",
-                          "value": "99%",
-                          "type": "text"
-                        },
-                        {
-                          "key": "assessment_year",
-                          "value": "5+",
-                          "type": "text"
-                        },
-                        {
-                          "key": "settingable_type",
-                          "value": "website_banner_statistics",
-                          "type": "text"
-                        }
-                      ]
-                    },
-                    "url": {
-                      "raw": "{{url}}/api/super-admin/site-settings",
-                      "host": ["{{url}}"],
-                      "path": ["api", "super-admin", "site-settings"]
-                    }
-                  },
-                  "response": []
-                },
-                {
-                  "name": "show website banner statistics",
-                  "request": {
-                    "auth": {
-                      "type": "bearer",
-                      "bearer": [
-                        {
-                          "key": "token",
-                          "value": "{{token}}",
-                          "type": "string"
-                        }
-                      ]
-                    },
-                    "method": "GET",
-                    "header": [
-                      {
-                        "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
-                      }
-                    ],
-                    "url": {
-                      "raw": "{{url}}/api/super-admin/site-settings?settingable_type=website_banner_statistics",
-                      "host": ["{{url}}"],
-                      "path": ["api", "super-admin", "site-settings"],
-                      "query": [
-                        {
-                          "key": "settingable_type",
-                          "value": "website_banner_statistics"
-                        }
-                      ]
-                    }
-                  },
-                  "response": [
-                    {
-                      "name": "show website banner statistics",
-                      "originalRequest": {
-                        "method": "GET",
-                        "header": [
-                          {
-                            "key": "Accept",
-                            "value": "application/json",
-                            "type": "text"
-                          }
-                        ],
-                        "url": {
-                          "raw": "{{url}}/api/super-admin/site-settings?settingable_type=website_banner_statistics",
-                          "host": ["{{url}}"],
-                          "path": ["api", "super-admin", "site-settings"],
-                          "query": [
-                            {
-                              "key": "settingable_type",
-                              "value": "website_banner_statistics"
-                            }
-                          ]
-                        }
-                      },
-                      "status": "OK",
-                      "code": 200,
-                      "_postman_previewlanguage": "json",
-                      "header": [
-                        {
-                          "key": "Date",
-                          "value": "Sat, 10 Aug 2024 06:49:24 GMT"
-                        },
-                        {
-                          "key": "Server",
-                          "value": "Apache"
-                        },
-                        {
-                          "key": "Cache-Control",
-                          "value": "no-cache, private"
-                        },
-                        {
-                          "key": "Access-Control-Allow-Origin",
-                          "value": "*"
-                        },
-                        {
-                          "key": "Vary",
-                          "value": "Authorization"
-                        },
-                        {
-                          "key": "Upgrade",
-                          "value": "h2,h2c"
-                        },
-                        {
-                          "key": "Connection",
-                          "value": "Upgrade, Keep-Alive"
-                        },
-                        {
-                          "key": "Keep-Alive",
-                          "value": "timeout=5, max=100"
-                        },
-                        {
-                          "key": "Transfer-Encoding",
-                          "value": "chunked"
-                        },
-                        {
-                          "key": "Content-Type",
-                          "value": "application/json"
-                        }
-                      ],
-                      "cookie": [],
-                      "body": "{\n    \"assurance_count\": \"100%\",\n    \"student_count\": \"20\",\n    \"success_rate\": \"99%\",\n    \"assessment_year\": \"5+\"\n}"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
               "name": "Store Site Setting",
               "request": {
                 "auth": {
@@ -1343,6 +1078,271 @@
                       "raw": "{{url}}/api/super-admin/cms/blogs/{slug}",
                       "host": ["{{url}}"],
                       "path": ["api", "super-admin", "cms", "blogs", "{slug}"]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "Website Banner Statistics",
+              "item": [
+                {
+                  "name": "store website banner statistics",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "assurance_count",
+                          "value": "100%",
+                          "type": "text"
+                        },
+                        {
+                          "key": "student_count",
+                          "value": "20",
+                          "type": "text"
+                        },
+                        {
+                          "key": "success_rate",
+                          "value": "99%",
+                          "type": "text"
+                        },
+                        {
+                          "key": "assessment_year",
+                          "value": "5+",
+                          "type": "text"
+                        },
+                        {
+                          "key": "settingable_type",
+                          "value": "website_banner_statistics",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/super-admin/site-settings",
+                      "host": ["{{url}}"],
+                      "path": ["api", "super-admin", "site-settings"]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "show website banner statistics",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/super-admin/site-settings?settingable_type=website_banner_statistics",
+                      "host": ["{{url}}"],
+                      "path": ["api", "super-admin", "site-settings"],
+                      "query": [
+                        {
+                          "key": "settingable_type",
+                          "value": "website_banner_statistics"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "show website banner statistics",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json",
+                            "type": "text"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{url}}/api/super-admin/site-settings?settingable_type=website_banner_statistics",
+                          "host": ["{{url}}"],
+                          "path": ["api", "super-admin", "site-settings"],
+                          "query": [
+                            {
+                              "key": "settingable_type",
+                              "value": "website_banner_statistics"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Date",
+                          "value": "Sat, 10 Aug 2024 06:49:24 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "Apache"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-cache, private"
+                        },
+                        {
+                          "key": "Access-Control-Allow-Origin",
+                          "value": "*"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Authorization"
+                        },
+                        {
+                          "key": "Upgrade",
+                          "value": "h2,h2c"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "Upgrade, Keep-Alive"
+                        },
+                        {
+                          "key": "Keep-Alive",
+                          "value": "timeout=5, max=100"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n    \"assurance_count\": \"100%\",\n    \"student_count\": \"20\",\n    \"success_rate\": \"99%\",\n    \"assessment_year\": \"5+\"\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "About CEO",
+              "item": [
+                {
+                  "name": "store ceo detail",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "ceo_name",
+                          "value": "Rochak Bhattrai",
+                          "type": "text"
+                        },
+                        {
+                          "key": "ceo_message",
+                          "value": "hfghghh",
+                          "type": "text"
+                        },
+                        {
+                          "key": "ceo_image",
+                          "type": "file",
+                          "src": "dgiEbxJqy/ICON Png.png"
+                        },
+                        {
+                          "key": "settingable_type",
+                          "value": "CEO",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/super-admin/site-settings",
+                      "host": ["{{url}}"],
+                      "path": ["api", "super-admin", "site-settings"]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "show about consultancy CEO",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/super-admin/site-settings?settingable_type=CEO",
+                      "host": ["{{url}}"],
+                      "path": ["api", "super-admin", "site-settings"],
+                      "query": [
+                        {
+                          "key": "settingable_type",
+                          "value": "CEO"
+                        }
+                      ]
                     }
                   },
                   "response": []
