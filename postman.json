@@ -170,12 +170,7 @@
                   "formdata": [
                     {
                       "key": "name",
-                      "value": "Hancie Phago",
-                      "type": "text"
-                    },
-                    {
-                      "key": "email",
-                      "value": "superadmin@gmail.com",
+                      "value": "Hancie Phago5",
                       "type": "text"
                     },
                     {
@@ -818,58 +813,6 @@
               "name": "Contact Us",
               "item": [
                 {
-                  "name": "store contact us",
-                  "request": {
-                    "auth": {
-                      "type": "noauth"
-                    },
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
-                      }
-                    ],
-                    "body": {
-                      "mode": "formdata",
-                      "formdata": [
-                        {
-                          "key": "name",
-                          "value": "Hancie Phago",
-                          "type": "text"
-                        },
-                        {
-                          "key": "email",
-                          "value": "hanciephago@gmail.com",
-                          "type": "text"
-                        },
-                        {
-                          "key": "mobile_no",
-                          "value": "9825915122",
-                          "type": "text"
-                        },
-                        {
-                          "key": "subject",
-                          "value": "hy",
-                          "type": "text"
-                        },
-                        {
-                          "key": "message",
-                          "value": "hy",
-                          "type": "text"
-                        }
-                      ]
-                    },
-                    "url": {
-                      "raw": "{{url}}/api/contact-us",
-                      "host": ["{{url}}"],
-                      "path": ["api", "contact-us"]
-                    }
-                  },
-                  "response": []
-                },
-                {
                   "name": "show all contact us list",
                   "request": {
                     "auth": {
@@ -940,6 +883,321 @@
                   "response": []
                 }
               ]
+            },
+            {
+              "name": "Blog",
+              "item": [
+                {
+                  "name": "create blog",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "title",
+                          "value": "hy",
+                          "type": "text"
+                        },
+                        {
+                          "key": "description",
+                          "value": "dsfgsgd",
+                          "type": "text"
+                        },
+                        {
+                          "key": "blog_image",
+                          "type": "file",
+                          "src": "kDd89w5zJ/440195865_467032842653939_3630743480865858158_n.png"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/super-admin/cms/blogs",
+                      "host": ["{{url}}"],
+                      "path": ["api", "super-admin", "cms", "blogs"]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "show all blog list",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/super-admin/cms/blogs?pagination_limit=5&search_keyword=hy",
+                      "host": ["{{url}}"],
+                      "path": ["api", "super-admin", "cms", "blogs"],
+                      "query": [
+                        {
+                          "key": "pagination_limit",
+                          "value": "5"
+                        },
+                        {
+                          "key": "search_keyword",
+                          "value": "hy"
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "show single blog",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/super-admin/cms/blogs/{slug}",
+                      "host": ["{{url}}"],
+                      "path": ["api", "super-admin", "cms", "blogs", "{slug}"]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "delete blog",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/super-admin/cms/blogs/{slug}",
+                      "host": ["{{url}}"],
+                      "path": ["api", "super-admin", "cms", "blogs", "{slug}"]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "update blog",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "title",
+                          "value": "dfsgd",
+                          "type": "text"
+                        },
+                        {
+                          "key": "description",
+                          "value": "gdgdg",
+                          "type": "text"
+                        },
+                        {
+                          "key": "_method",
+                          "value": "PUT",
+                          "type": "text"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/super-admin/cms/blogs/{slug}",
+                      "host": ["{{url}}"],
+                      "path": ["api", "super-admin", "cms", "blogs", "{slug}"]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Website",
+      "item": [
+        {
+          "name": "Contact Us",
+          "item": [
+            {
+              "name": "store contact us",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Hancie Phago",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "hanciephago@gmail.com",
+                      "type": "text"
+                    },
+                    {
+                      "key": "mobile_no",
+                      "value": "9825915122",
+                      "type": "text"
+                    },
+                    {
+                      "key": "subject",
+                      "value": "hy",
+                      "type": "text"
+                    },
+                    {
+                      "key": "message",
+                      "value": "hy",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/contact-us",
+                  "host": ["{{url}}"],
+                  "path": ["api", "contact-us"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Blog",
+          "item": [
+            {
+              "name": "show all blog list",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/blogs?pagination_limit=5&search_limit",
+                  "host": ["{{url}}"],
+                  "path": ["api", "blogs"],
+                  "query": [
+                    {
+                      "key": "pagination_limit",
+                      "value": "5"
+                    },
+                    {
+                      "key": "search_limit",
+                      "value": null
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "show single blog details",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/blogs/{blog}",
+                  "host": ["{{url}}"],
+                  "path": ["api", "blogs", "{blog}"]
+                }
+              },
+              "response": []
             }
           ]
         }

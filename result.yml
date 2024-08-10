@@ -39,6 +39,10 @@ tags:
   - name: Super Admin > Universities
   - name: Super Admin > CMS
   - name: Super Admin > CMS > Contact Us
+  - name: Super Admin > CMS > Blog
+  - name: Website
+  - name: Website > Contact Us
+  - name: Website > Blog
 paths:
   /api/super-admin-login:
     post:
@@ -132,10 +136,7 @@ paths:
               properties:
                 name:
                   type: string
-                  example: Hancie Phago
-                email:
-                  type: string
-                  example: superadmin@gmail.com
+                  example: Hancie Phago5
                 profile_image:
                   type: string
                   format: binary
@@ -512,45 +513,6 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/contact-us:
-    post:
-      tags:
-        - Super Admin > CMS > Contact Us
-      summary: store contact us
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  example: Hancie Phago
-                email:
-                  type: string
-                  example: hanciephago@gmail.com
-                mobile_no:
-                  type: integer
-                  example: '9825915122'
-                subject:
-                  type: string
-                  example: hy
-                message:
-                  type: string
-                  example: hy
-      security:
-        - noauthAuth: []
-      parameters:
-        - name: Accept
-          in: header
-          schema:
-            type: string
-          example: application/json
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /api/super-admin/cms/contact-us:
     get:
       tags:
@@ -587,6 +549,233 @@ paths:
             type: string
           example: application/json
         - name: contact_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/cms/blogs:
+    post:
+      tags:
+        - Super Admin > CMS > Blog
+      summary: create blog
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: hy
+                description:
+                  type: string
+                  example: dsfgsgd
+                blog_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Super Admin > CMS > Blog
+      summary: show all blog list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pagination_limit
+          in: query
+          schema:
+            type: integer
+          example: '5'
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+          example: hy
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/cms/blogs/{slug}:
+    get:
+      tags:
+        - Super Admin > CMS > Blog
+      summary: show single blog
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Super Admin > CMS > Blog
+      summary: delete blog
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Super Admin > CMS > Blog
+      summary: update blog
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: dfsgd
+                description:
+                  type: string
+                  example: gdgdg
+                _method:
+                  type: string
+                  example: PUT
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/contact-us:
+    post:
+      tags:
+        - Website > Contact Us
+      summary: store contact us
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Hancie Phago
+                email:
+                  type: string
+                  example: hanciephago@gmail.com
+                mobile_no:
+                  type: integer
+                  example: '9825915122'
+                subject:
+                  type: string
+                  example: hy
+                message:
+                  type: string
+                  example: hy
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/blogs:
+    get:
+      tags:
+        - Website > Blog
+      summary: show all blog list
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pagination_limit
+          in: query
+          schema:
+            type: integer
+          example: '5'
+        - name: search_limit
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/blogs/{blog}:
+    get:
+      tags:
+        - Website > Blog
+      summary: show single blog details
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: blog
           in: path
           schema:
             type: string
