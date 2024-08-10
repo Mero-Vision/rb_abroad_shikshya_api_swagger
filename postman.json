@@ -202,7 +202,7 @@
               "name": "About CEO",
               "item": [
                 {
-                  "name": "store ceo details",
+                  "name": "store ceo detail",
                   "request": {
                     "auth": {
                       "type": "bearer",
@@ -256,7 +256,7 @@
                   "response": []
                 },
                 {
-                  "name": "show about ceo",
+                  "name": "show about consultancy CEO",
                   "request": {
                     "auth": {
                       "type": "bearer",
@@ -296,7 +296,7 @@
               "name": "Website Banner Statistics",
               "item": [
                 {
-                  "name": "store website statistics",
+                  "name": "store website banner statistics",
                   "request": {
                     "auth": {
                       "type": "bearer",
