@@ -43,6 +43,7 @@ tags:
   - name: Super Admin > CMS > Website Banner Statistics
   - name: Super Admin > CMS > About CEO
   - name: Super Admin > CMS > Our Team
+  - name: Super Admin > Agent
   - name: Website
   - name: Website > Contact Us
   - name: Website > Blog
@@ -527,6 +528,74 @@ paths:
           description: Successful response
           content:
             application/json: {}
+    post:
+      tags:
+        - Super Admin > Universities
+      summary: update university detail
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                university_name:
+                  type: string
+                  example: Yorkville University - Toront0
+                country:
+                  type: string
+                  example: Canada
+                country_code:
+                  type: string
+                  example: CA
+                province:
+                  type: string
+                  example: Ontario
+                city:
+                  type: string
+                  example: Toronto
+                _method:
+                  type: string
+                  example: PUT
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Super Admin > Universities
+      summary: delete university
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/super-admin/cms/contact-us:
     get:
       tags:
@@ -850,6 +919,125 @@ paths:
             type: string
           example: application/json
         - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/agent:
+    post:
+      tags:
+        - Super Admin > Agent
+      summary: create agent
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Hancie Phago
+                email:
+                  type: string
+                  example: hanciephago56@gmail.com
+                nationality:
+                  type: string
+                  example: Nepalese
+                mobile_no:
+                  type: integer
+                  example: '9825915122'
+                phone_no:
+                  type: string
+                dob:
+                  type: string
+                  example: '2003-01-20'
+                country:
+                  type: string
+                  example: Nepal
+                postal:
+                  type: integer
+                  example: '44566'
+                province:
+                  type: string
+                  example: Bagmati Province
+                district:
+                  type: string
+                  example: Kathmandu
+                address:
+                  type: string
+                  example: New Baneshwor
+                company_name:
+                  type: string
+                  example: Mero Vision
+                vat_no:
+                  type: string
+                  example: 3453535-45646-567
+                company_registration_no:
+                  type: string
+                  example: 34545-456546
+                website:
+                  type: string
+                  example: https://merovision.com/
+                company_registration_image:
+                  type: string
+                  format: binary
+                company_vat_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Super Admin > Agent
+      summary: show all agents
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pagination_limit
+          in: query
+          schema:
+            type: integer
+          example: '5'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/agent/{slug}:
+    get:
+      tags:
+        - Super Admin > Agent
+      summary: show single agent detail
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: slug
           in: path
           schema:
             type: string

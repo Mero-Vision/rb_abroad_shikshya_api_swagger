@@ -905,6 +905,113 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "update university detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "university_name",
+											"value": "Yorkville University - Toront0",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "Canada",
+											"type": "text"
+										},
+										{
+											"key": "country_code",
+											"value": "CA",
+											"type": "text"
+										},
+										{
+											"key": "province",
+											"value": "Ontario",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Toronto",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/super-admin/university/{slug}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"university",
+										"{slug}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete university",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/university/{slug}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"university",
+										"{slug}"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -1776,6 +1883,213 @@
 									"response": []
 								}
 							]
+						}
+					]
+				},
+				{
+					"name": "Agent",
+					"item": [
+						{
+							"name": "create agent",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Hancie Phago",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "hanciephago56@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "nationality",
+											"value": "Nepalese",
+											"type": "text"
+										},
+										{
+											"key": "mobile_no",
+											"value": "9825915122",
+											"type": "text"
+										},
+										{
+											"key": "phone_no",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "dob",
+											"value": "2003-01-20",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "Nepal",
+											"type": "text"
+										},
+										{
+											"key": "postal",
+											"value": "44566",
+											"type": "text"
+										},
+										{
+											"key": "province",
+											"value": "Bagmati Province",
+											"type": "text"
+										},
+										{
+											"key": "district",
+											"value": "Kathmandu",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "New Baneshwor",
+											"type": "text"
+										},
+										{
+											"key": "company_name",
+											"value": "Mero Vision",
+											"type": "text"
+										},
+										{
+											"key": "vat_no",
+											"value": "3453535-45646-567",
+											"type": "text"
+										},
+										{
+											"key": "company_registration_no",
+											"value": "34545-456546",
+											"type": "text"
+										},
+										{
+											"key": "website",
+											"value": "https://merovision.com/",
+											"type": "text"
+										},
+										{
+											"key": "company_registration_image",
+											"type": "file",
+											"src": "w_5Y1L8aJ/photo-front-view-young-man-showing-empty-hand-with-notebooks.jpg"
+										},
+										{
+											"key": "company_vat_image",
+											"type": "file",
+											"src": "6OnpWHP5W/photo-front-view-young-man-showing-empty-hand-with-notebooks.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/super-admin/agent",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"agent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show all agents",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/agent?pagination_limit=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"agent"
+									],
+									"query": [
+										{
+											"key": "pagination_limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show single agent detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/agent/{slug}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"agent",
+										"{slug}"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
