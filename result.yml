@@ -42,6 +42,7 @@ tags:
   - name: Super Admin > CMS > Blog
   - name: Super Admin > CMS > Website Banner Statistics
   - name: Super Admin > CMS > About CEO
+  - name: Super Admin > CMS > Our Team
   - name: Website
   - name: Website > Contact Us
   - name: Website > Blog
@@ -704,6 +705,151 @@ paths:
             type: string
           example: application/json
         - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/cms/blogs/update-status/{slug}:
+    post:
+      tags:
+        - Super Admin > CMS > Blog
+      summary: update status
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  example: inactive
+                _method:
+                  type: string
+                  example: PUT
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/cms/our-team:
+    post:
+      tags:
+        - Super Admin > CMS > Our Team
+      summary: store our team data
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Drishya Poudel
+                designation:
+                  type: string
+                  example: Frontend Developer
+                our_team_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Super Admin > CMS > Our Team
+      summary: get all team
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/cms/our-team/{id}:
+    delete:
+      tags:
+        - Super Admin > CMS > Our Team
+      summary: delete our team data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Super Admin > CMS > Our Team
+      summary: update our team
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                designation:
+                  type: string
+                our_team_image:
+                  type: string
+                _method:
+                  type: string
+                  example: PUT
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
           in: path
           schema:
             type: string
