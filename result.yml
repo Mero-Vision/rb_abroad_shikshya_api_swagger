@@ -48,6 +48,7 @@ tags:
   - name: Website
   - name: Website > Contact Us
   - name: Website > Blog
+  - name: Website > FAQ
 paths:
   /api/super-admin-login:
     post:
@@ -1231,6 +1232,16 @@ paths:
           schema:
             type: string
           required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/faq:
+    get:
+      tags:
+        - Website > FAQ
+      summary: show faq
       responses:
         '200':
           description: Successful response
