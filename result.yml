@@ -43,6 +43,7 @@ tags:
   - name: Super Admin > CMS > Website Banner Statistics
   - name: Super Admin > CMS > About CEO
   - name: Super Admin > CMS > Our Team
+  - name: Super Admin > CMS > FAQ
   - name: Super Admin > Agent
   - name: Website
   - name: Website > Contact Us
@@ -910,6 +911,109 @@ paths:
                 _method:
                   type: string
                   example: PUT
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/cms/faq:
+    post:
+      tags:
+        - Super Admin > CMS > FAQ
+      summary: store faq
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                question:
+                  type: string
+                answer:
+                  type: string
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Super Admin > CMS > FAQ
+      summary: get faq list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/cms/faq/{id}:
+    post:
+      tags:
+        - Super Admin > CMS > FAQ
+      summary: update faq
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                question:
+                  type: string
+                answer:
+                  type: string
+                _method:
+                  type: string
+                  example: PUT
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Super Admin > CMS > FAQ
+      summary: delete faq
       security:
         - bearerAuth: []
       parameters:

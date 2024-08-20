@@ -1883,6 +1883,192 @@
 									"response": []
 								}
 							]
+						},
+						{
+							"name": "FAQ",
+							"item": [
+								{
+									"name": "store faq",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "question",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "answer",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/super-admin/cms/faq",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"super-admin",
+												"cms",
+												"faq"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get faq list",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/super-admin/cms/faq",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"super-admin",
+												"cms",
+												"faq"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update faq",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "question",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "answer",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "_method",
+													"value": "PUT",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/super-admin/cms/faq/{id}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"super-admin",
+												"cms",
+												"faq",
+												"{id}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete faq",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/super-admin/cms/faq/{id}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"super-admin",
+												"cms",
+												"faq",
+												"{id}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
 						}
 					]
 				},
