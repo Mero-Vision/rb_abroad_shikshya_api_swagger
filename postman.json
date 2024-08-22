@@ -2432,6 +2432,52 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Our Team",
+					"item": [
+						{
+							"name": "get our team list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/our-team",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"our-team"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Site Settings",
+					"item": [
+						{
+							"name": "get all site settings data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/site-settings",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"site-settings"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}

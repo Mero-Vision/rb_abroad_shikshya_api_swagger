@@ -49,6 +49,8 @@ tags:
   - name: Website > Contact Us
   - name: Website > Blog
   - name: Website > FAQ
+  - name: Website > Our Team
+  - name: Website > Site Settings
 paths:
   /api/super-admin-login:
     post:
@@ -1242,6 +1244,26 @@ paths:
       tags:
         - Website > FAQ
       summary: show faq
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/our-team:
+    get:
+      tags:
+        - Website > Our Team
+      summary: get our team list
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/site-settings:
+    get:
+      tags:
+        - Website > Site Settings
+      summary: get all site settings data
       responses:
         '200':
           description: Successful response
