@@ -479,6 +479,24 @@ paths:
                 university_logo:
                   type: string
                   format: binary
+                designated_learning_institution_no:
+                  type: string
+                  example: 54rtrtt
+                commission_amount:
+                  type: integer
+                  example: '500'
+                founded_in:
+                  type: string
+                  example: '2014-01-23'
+                institution_no_type:
+                  type: string
+                  example: dsfg
+                institution_type:
+                  type: string
+                  example: Public
+                video_link:
+                  type: string
+                  example: dfgfdg
       security:
         - bearerAuth: []
       parameters:

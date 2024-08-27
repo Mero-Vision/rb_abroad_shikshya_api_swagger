@@ -818,6 +818,36 @@
 											"key": "university_logo",
 											"type": "file",
 											"src": "5S4hRdN40/ICON Png.png"
+										},
+										{
+											"key": "designated_learning_institution_no",
+											"value": "54rtrtt",
+											"type": "text"
+										},
+										{
+											"key": "commission_amount",
+											"value": "500",
+											"type": "text"
+										},
+										{
+											"key": "founded_in",
+											"value": "2014-01-23",
+											"type": "text"
+										},
+										{
+											"key": "institution_no_type",
+											"value": "dsfg",
+											"type": "text"
+										},
+										{
+											"key": "institution_type",
+											"value": "Public",
+											"type": "text"
+										},
+										{
+											"key": "video_link",
+											"value": "dfgfdg",
+											"type": "text"
 										}
 									]
 								},
