@@ -44,6 +44,7 @@ tags:
   - name: Super Admin > CMS > About CEO
   - name: Super Admin > CMS > Our Team
   - name: Super Admin > CMS > FAQ
+  - name: Super Admin > CMS > Testimonial
   - name: Super Admin > Agent
   - name: Website
   - name: Website > Contact Us
@@ -51,6 +52,7 @@ tags:
   - name: Website > FAQ
   - name: Website > Our Team
   - name: Website > Site Settings
+  - name: Website > Testimonial
 paths:
   /api/super-admin-login:
     post:
@@ -1053,6 +1055,179 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/super-admin/testimonial:
+    post:
+      tags:
+        - Super Admin > CMS > Testimonial
+      summary: store testimonial
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Hancie Phago
+                country:
+                  type: string
+                  example: America
+                visa_intake:
+                  type: string
+                  example: September
+                university:
+                  type: string
+                  example: Oxford University
+                subject:
+                  type: string
+                  example: Programming
+                message:
+                  type: string
+                  example: dfdf
+                university_logo:
+                  type: string
+                  format: binary
+                profile_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Super Admin > CMS > Testimonial
+      summary: show all testimonial
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pagination_limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/testimonial/{id}:
+    post:
+      tags:
+        - Super Admin > CMS > Testimonial
+      summary: update testimonial
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Hancie Phago2
+                country:
+                  type: string
+                  example: America
+                visa_intake:
+                  type: string
+                  example: September
+                university:
+                  type: string
+                  example: Oxford University
+                subject:
+                  type: string
+                  example: Programming
+                message:
+                  type: string
+                  example: dfdf
+                university_logo:
+                  type: string
+                  format: binary
+                profile_image:
+                  type: string
+                  format: binary
+                _method:
+                  type: string
+                  example: PUT
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Super Admin > CMS > Testimonial
+      summary: show single testimonial
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Super Admin > CMS > Testimonial
+      summary: delete testimonial
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/super-admin/agent:
     post:
       tags:
@@ -1282,6 +1457,22 @@ paths:
       tags:
         - Website > Site Settings
       summary: get all site settings data
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/testimonial:
+    get:
+      tags:
+        - Website > Testimonial
+      summary: show all testimonial
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
       responses:
         '200':
           description: Successful response

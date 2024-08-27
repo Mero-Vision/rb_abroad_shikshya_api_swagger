@@ -2099,6 +2099,294 @@
 									"response": []
 								}
 							]
+						},
+						{
+							"name": "Testimonial",
+							"item": [
+								{
+									"name": "store testimonial",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Hancie Phago",
+													"type": "text"
+												},
+												{
+													"key": "country",
+													"value": "America",
+													"type": "text"
+												},
+												{
+													"key": "visa_intake",
+													"value": "September",
+													"type": "text"
+												},
+												{
+													"key": "university",
+													"value": "Oxford University",
+													"type": "text"
+												},
+												{
+													"key": "subject",
+													"value": "Programming",
+													"type": "text"
+												},
+												{
+													"key": "message",
+													"value": "dfdf",
+													"type": "text"
+												},
+												{
+													"key": "university_logo",
+													"type": "file",
+													"src": "-hxcDrEUK/Black and Green Illustrative Shree Krishna Janmashtami Instagram Post.png"
+												},
+												{
+													"key": "profile_image",
+													"type": "file",
+													"src": "X2tnvU88Q/Black and Green Illustrative Shree Krishna Janmashtami Instagram Post.png"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/super-admin/testimonial",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"super-admin",
+												"testimonial"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "show all testimonial",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/super-admin/testimonial?pagination_limit&search_keyword",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"super-admin",
+												"testimonial"
+											],
+											"query": [
+												{
+													"key": "pagination_limit",
+													"value": null
+												},
+												{
+													"key": "search_keyword",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update testimonial",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Hancie Phago2",
+													"type": "text"
+												},
+												{
+													"key": "country",
+													"value": "America",
+													"type": "text"
+												},
+												{
+													"key": "visa_intake",
+													"value": "September",
+													"type": "text"
+												},
+												{
+													"key": "university",
+													"value": "Oxford University",
+													"type": "text"
+												},
+												{
+													"key": "subject",
+													"value": "Programming",
+													"type": "text"
+												},
+												{
+													"key": "message",
+													"value": "dfdf",
+													"type": "text"
+												},
+												{
+													"key": "university_logo",
+													"type": "file",
+													"src": []
+												},
+												{
+													"key": "profile_image",
+													"type": "file",
+													"src": []
+												},
+												{
+													"key": "_method",
+													"value": "PUT",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/super-admin/testimonial/{id}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"super-admin",
+												"testimonial",
+												"{id}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "show single testimonial",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/super-admin/testimonial/{id}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"super-admin",
+												"testimonial",
+												"{id}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete testimonial",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/super-admin/testimonial/{id}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"super-admin",
+												"testimonial",
+												"{id}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
 						}
 					]
 				},
@@ -2502,6 +2790,35 @@
 									"path": [
 										"api",
 										"site-settings"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Testimonial",
+					"item": [
+						{
+							"name": "show all testimonial",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/testimonial",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"testimonial"
 									]
 								}
 							},
