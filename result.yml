@@ -46,6 +46,7 @@ tags:
   - name: Super Admin > CMS > FAQ
   - name: Super Admin > CMS > Testimonial
   - name: Super Admin > Agent
+  - name: Super Admin > University Courses
   - name: Website
   - name: Website > Contact Us
   - name: Website > Blog
@@ -1420,6 +1421,70 @@ paths:
           schema:
             type: string
           required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/university-courses:
+    post:
+      tags:
+        - Super Admin > University Courses
+      summary: store university courses
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: dfsgfdg
+                university_id:
+                  type: integer
+                  example: '3'
+                program_level:
+                  type: string
+                description:
+                  type: string
+                currency:
+                  type: string
+                gpa:
+                  type: string
+                ielts:
+                  type: string
+                tuition_fee:
+                  type: string
+                application_fee:
+                  type: string
+                course_image[]:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Super Admin > University Courses
+      summary: show all university courses
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
       responses:
         '200':
           description: Successful response

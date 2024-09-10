@@ -2722,6 +2722,141 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "University Courses",
+					"item": [
+						{
+							"name": "store university courses",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "dfsgfdg",
+											"type": "text"
+										},
+										{
+											"key": "university_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "program_level",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "currency",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "gpa",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "ielts",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "tuition_fee",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "application_fee",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "course_image[]",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "course_image[]",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/super-admin/university-courses",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"university-courses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show all university courses",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/university-courses",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"university-courses"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
