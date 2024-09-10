@@ -1347,6 +1347,84 @@ paths:
           description: Successful response
           content:
             application/json: {}
+    post:
+      tags:
+        - Super Admin > Agent
+      summary: update agent details
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Hancie Phago
+                email:
+                  type: string
+                  example: hanciephago56@gmail.com
+                nationality:
+                  type: string
+                  example: Nepalese
+                mobile_no:
+                  type: integer
+                  example: '9825915122'
+                phone_no:
+                  type: string
+                dob:
+                  type: string
+                  example: '2003-01-20'
+                country:
+                  type: string
+                  example: Nepal
+                postal:
+                  type: integer
+                  example: '44566'
+                province:
+                  type: string
+                  example: Bagmati Province
+                district:
+                  type: string
+                  example: Kathmandu
+                address:
+                  type: string
+                  example: New Baneshwor
+                company_name:
+                  type: string
+                  example: Mero Vision
+                vat_no:
+                  type: string
+                  example: 3453535-45646-567
+                company_registration_no:
+                  type: string
+                  example: 34545-456546
+                website:
+                  type: string
+                  example: https://merovision.com/
+                agent_profile_image:
+                  type: string
+                  format: binary
+                _method:
+                  type: string
+                  example: PUT
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/contact-us:
     post:
       tags:
