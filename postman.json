@@ -2857,6 +2857,193 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "University Features",
+					"item": [
+						{
+							"name": "store features",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "university_id",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "feature_name",
+											"value": "fgfg",
+											"type": "text"
+										},
+										{
+											"key": "feature_description",
+											"value": "hghgh",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/super-admin/university-features",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"university-features"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update university features",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "feature_name",
+											"value": "hy",
+											"type": "text"
+										},
+										{
+											"key": "feature_description",
+											"value": "hy",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/super-admin/university-features/{id}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"university-features",
+										"{id}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show all university features",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/university-features",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"university-features"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete university features",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/university-features/{id}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"university-features",
+										"{id}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
