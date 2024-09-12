@@ -501,6 +501,15 @@ paths:
                 video_link:
                   type: string
                   example: dfgfdg
+                feature_name:
+                  type: string
+                  example: hh
+                feature_description:
+                  type: string
+                  example: hh
+                university_image[]:
+                  type: string
+                  format: binary
       security:
         - bearerAuth: []
       parameters:

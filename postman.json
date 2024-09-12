@@ -848,6 +848,21 @@
 											"key": "video_link",
 											"value": "dfgfdg",
 											"type": "text"
+										},
+										{
+											"key": "feature_name",
+											"value": "hh",
+											"type": "text"
+										},
+										{
+											"key": "feature_description",
+											"value": "hh",
+											"type": "text"
+										},
+										{
+											"key": "university_image[]",
+											"type": "file",
+											"src": []
 										}
 									]
 								},
