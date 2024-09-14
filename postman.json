@@ -2807,12 +2807,12 @@
 										},
 										{
 											"key": "program_level",
-											"value": "",
+											"value": "Undergruade Program",
 											"type": "text"
 										},
 										{
 											"key": "description",
-											"value": "",
+											"value": "vcxbcbc",
 											"type": "text"
 										},
 										{
@@ -2821,34 +2821,29 @@
 											"type": "text"
 										},
 										{
-											"key": "gpa",
-											"value": "",
-											"type": "text"
-										},
-										{
-											"key": "ielts",
-											"value": "",
-											"type": "text"
-										},
-										{
 											"key": "tuition_fee",
-											"value": "",
+											"value": "600",
 											"type": "text"
 										},
 										{
 											"key": "application_fee",
+											"value": "700",
+											"type": "text"
+										},
+										{
+											"key": "course_duration",
 											"value": "",
 											"type": "text"
 										},
 										{
 											"key": "course_image[]",
 											"type": "file",
-											"src": []
+											"src": "BOZSBW-hm/438051678_1149496079732829_8597750427987431865_n.png"
 										},
 										{
-											"key": "course_image[]",
-											"type": "file",
-											"src": []
+											"key": "tag_name[]",
+											"value": "Fast Acceptance",
+											"type": "text"
 										}
 									]
 								},
@@ -2896,6 +2891,42 @@
 										"api",
 										"super-admin",
 										"university-courses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show single course",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/university-courses/{id}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"university-courses",
+										"{id}"
 									]
 								}
 							},
@@ -3119,7 +3150,7 @@
 									"formdata": [
 										{
 											"key": "course_id",
-											"value": "1",
+											"value": "4",
 											"type": "text"
 										},
 										{
