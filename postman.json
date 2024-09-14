@@ -2931,6 +2931,42 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "delete university course",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/university-courses/4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"university-courses",
+										"4"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
