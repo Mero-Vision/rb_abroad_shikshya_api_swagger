@@ -48,6 +48,7 @@ tags:
   - name: Super Admin > Agent
   - name: Super Admin > University Courses
   - name: Super Admin > University Features
+  - name: Super Admin > Course Tags
   - name: Website
   - name: Website > Contact Us
   - name: Website > Blog
@@ -501,15 +502,33 @@ paths:
                 video_link:
                   type: string
                   example: dfgfdg
-                feature_name:
+                feature_name[]:
                   type: string
                   example: hh
-                feature_description:
+                feature_description[]:
                   type: string
                   example: hh
                 university_image[]:
                   type: string
                   format: binary
+                application_fee:
+                  type: integer
+                  example: '800'
+                description:
+                  type: string
+                  example: cbvvbnbn
+                avg_graduation_program_duration:
+                  type: string
+                  example: 2 years
+                avg_undergraduation_program_duration:
+                  type: string
+                  example: 4 years
+                cost_of_living:
+                  type: string
+                  example: $20,635.00 CAD / Year
+                gross_tuition:
+                  type: string
+                  example: $32,832.59 CAD / Year
       security:
         - bearerAuth: []
       parameters:
@@ -1605,6 +1624,53 @@ paths:
           schema:
             type: string
           required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/course-tags:
+    post:
+      tags:
+        - Super Admin > Course Tags
+      summary: store course tags
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                course_id:
+                  type: integer
+                  example: '1'
+                tag_name[]:
+                  type: string
+                  example: Fast Acceptance
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Super Admin > Course Tags
+      summary: show all course tags
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
       responses:
         '200':
           description: Successful response

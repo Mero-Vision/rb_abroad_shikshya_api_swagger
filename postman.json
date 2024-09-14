@@ -850,12 +850,12 @@
 											"type": "text"
 										},
 										{
-											"key": "feature_name",
+											"key": "feature_name[]",
 											"value": "hh",
 											"type": "text"
 										},
 										{
-											"key": "feature_description",
+											"key": "feature_description[]",
 											"value": "hh",
 											"type": "text"
 										},
@@ -863,6 +863,36 @@
 											"key": "university_image[]",
 											"type": "file",
 											"src": []
+										},
+										{
+											"key": "application_fee",
+											"value": "800",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "cbvvbnbn",
+											"type": "text"
+										},
+										{
+											"key": "avg_graduation_program_duration",
+											"value": "2 years",
+											"type": "text"
+										},
+										{
+											"key": "avg_undergraduation_program_duration",
+											"value": "4 years",
+											"type": "text"
+										},
+										{
+											"key": "cost_of_living",
+											"value": "$20,635.00 CAD / Year",
+											"type": "text"
+										},
+										{
+											"key": "gross_tuition",
+											"value": "$32,832.59 CAD / Year",
+											"type": "text"
 										}
 									]
 								},
@@ -3053,6 +3083,96 @@
 										"super-admin",
 										"university-features",
 										"{id}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Course Tags",
+					"item": [
+						{
+							"name": "store course tags",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "course_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "tag_name[]",
+											"value": "Fast Acceptance",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/super-admin/course-tags",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"course-tags"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show all course tags",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/course-tags",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"course-tags"
 									]
 								}
 							},
