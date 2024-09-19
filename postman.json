@@ -65,6 +65,87 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "set password and verify account",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "password",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "token",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/set-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"set-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "agent login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "hanciephago@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/agent-login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent-login"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -2469,7 +2550,7 @@
 										},
 										{
 											"key": "email",
-											"value": "hanciephago56@gmail.com",
+											"value": "thirstytorvalds@freethecookies.com",
 											"type": "text"
 										},
 										{
@@ -2540,12 +2621,12 @@
 										{
 											"key": "company_registration_image",
 											"type": "file",
-											"src": "w_5Y1L8aJ/photo-front-view-young-man-showing-empty-hand-with-notebooks.jpg"
+											"src": "Bt5wUxgaR/Screenshot 2024-08-10 at 5.51.20 PM.png"
 										},
 										{
 											"key": "company_vat_image",
 											"type": "file",
-											"src": "6OnpWHP5W/photo-front-view-young-man-showing-empty-hand-with-notebooks.jpg"
+											"src": "Wv7LcLJcD/Screenshot 2024-08-10 at 5.51.20 PM.png"
 										}
 									]
 								},

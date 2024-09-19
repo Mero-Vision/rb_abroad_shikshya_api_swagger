@@ -85,6 +85,50 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/set-password:
+    get:
+      tags:
+        - Super Admin > Authentication
+      summary: set password and verify account
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/agent-login:
+    post:
+      tags:
+        - Super Admin > Authentication
+      summary: agent login
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: hanciephago@gmail.com
+                password:
+                  type: string
+                  example: password
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/super-admin/user/{id}:
     get:
       tags:
@@ -1274,7 +1318,7 @@ paths:
                   example: Hancie Phago
                 email:
                   type: string
-                  example: hanciephago56@gmail.com
+                  example: thirstytorvalds@freethecookies.com
                 nationality:
                   type: string
                   example: Nepalese
