@@ -51,6 +51,8 @@ tags:
   - name: Super Admin > Course Tags
   - name: Recruit Partners
   - name: Recruit Partners > Events
+  - name: Recruit Partners > University
+  - name: Recruit Partners > Courses
   - name: Website
   - name: Website > Contact Us
   - name: Website > Blog
@@ -1875,6 +1877,42 @@ paths:
           schema:
             type: string
           required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/agent/university:
+    get:
+      tags:
+        - Recruit Partners > University
+      summary: show all university
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/agent/university-courses:
+    get:
+      tags:
+        - Recruit Partners > Courses
+      summary: show all courses
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
       responses:
         '200':
           description: Successful response
