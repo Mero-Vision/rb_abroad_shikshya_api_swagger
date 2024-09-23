@@ -27,8 +27,8 @@ components:
       type: http
       scheme: noauth
 tags:
+  - name: Authentication
   - name: Super Admin
-  - name: Super Admin > Authentication
   - name: Super Admin > User Data
   - name: Super Admin > Site Setting
   - name: Super Admin > Master Data
@@ -49,6 +49,8 @@ tags:
   - name: Super Admin > University Courses
   - name: Super Admin > University Features
   - name: Super Admin > Course Tags
+  - name: Recruit Partners
+  - name: Recruit Partners > Events
   - name: Website
   - name: Website > Contact Us
   - name: Website > Blog
@@ -60,7 +62,7 @@ paths:
   /api/super-admin-login:
     post:
       tags:
-        - Super Admin > Authentication
+        - Authentication
       summary: super admin login
       requestBody:
         content:
@@ -88,7 +90,7 @@ paths:
   /api/set-password:
     get:
       tags:
-        - Super Admin > Authentication
+        - Authentication
       summary: set password and verify account
       parameters:
         - name: Accept
@@ -104,7 +106,7 @@ paths:
   /api/agent-login:
     post:
       tags:
-        - Super Admin > Authentication
+        - Authentication
       summary: agent login
       requestBody:
         content:
@@ -1761,6 +1763,118 @@ paths:
           schema:
             type: string
           example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/agent/events:
+    post:
+      tags:
+        - Recruit Partners > Events
+      summary: store events
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: hhh {required}
+                description:
+                  type: string
+                  example: hhh {required}
+                date:
+                  type: string
+                  example: 2023-08-20 {required}
+                time:
+                  type: string
+                  example: 02:12 pm {required}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Recruit Partners > Events
+      summary: show all events
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/agent/upcoming-events:
+    get:
+      tags:
+        - Recruit Partners > Events
+      summary: show all upcoming events
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/agent/past-events:
+    get:
+      tags:
+        - Recruit Partners > Events
+      summary: show all past events
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/agent/events/{id}:
+    delete:
+      tags:
+        - Recruit Partners > Events
+      summary: delete event
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: Successful response
