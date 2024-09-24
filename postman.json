@@ -104,59 +104,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "agent login",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"const response = pm.response.json()",
-									"pm.environment.set('token', response.data.token)",
-									"pm.environment.set('refresh_token', response.data.refresh_token)"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "email",
-									"value": "hanciephago@gmail.com",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "password",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{url}}/api/agent-login",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"agent-login"
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -3348,6 +3295,118 @@
 			"name": "Recruit Partners",
 			"item": [
 				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "agent login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = pm.response.json()",
+											"pm.environment.set('token', response.data.token)",
+											"pm.environment.set('refresh_token', response.data.refresh_token)"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "hanciephago@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/agent-login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent-login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "agent signup",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Nitesh Hamal",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "birukhadka155@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "mobile_no",
+											"value": "454656",
+											"type": "text"
+										},
+										{
+											"key": "company_name",
+											"value": "Mero Vision",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "nitesh*12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/agent-signup",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent-signup"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Events",
 					"item": [
 						{
@@ -3536,6 +3595,36 @@
 										"type": "text"
 									}
 								],
+								"url": {
+									"raw": "{{url}}/api/agent/events/{id}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"events",
+										"{id}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show single event",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
 								"url": {
 									"raw": "{{url}}/api/agent/events/{id}",
 									"host": [

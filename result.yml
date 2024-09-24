@@ -50,6 +50,7 @@ tags:
   - name: Super Admin > University Features
   - name: Super Admin > Course Tags
   - name: Recruit Partners
+  - name: Recruit Partners > Authentication
   - name: Recruit Partners > Events
   - name: Recruit Partners > University
   - name: Recruit Partners > Courses
@@ -94,34 +95,6 @@ paths:
       tags:
         - Authentication
       summary: set password and verify account
-      parameters:
-        - name: Accept
-          in: header
-          schema:
-            type: string
-          example: application/json
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api/agent-login:
-    post:
-      tags:
-        - Authentication
-      summary: agent login
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  example: hanciephago@gmail.com
-                password:
-                  type: string
-                  example: password
       parameters:
         - name: Accept
           in: header
@@ -1770,6 +1743,71 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/agent-login:
+    post:
+      tags:
+        - Recruit Partners > Authentication
+      summary: agent login
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: hanciephago@gmail.com
+                password:
+                  type: string
+                  example: password
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/agent-signup:
+    post:
+      tags:
+        - Recruit Partners > Authentication
+      summary: agent signup
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Nitesh Hamal
+                email:
+                  type: string
+                  example: birukhadka155@gmail.com
+                mobile_no:
+                  type: integer
+                  example: '454656'
+                company_name:
+                  type: string
+                  example: Mero Vision
+                password:
+                  type: string
+                  example: nitesh*12345678
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/agent/events:
     post:
       tags:
@@ -1872,6 +1910,23 @@ paths:
           schema:
             type: string
           example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Recruit Partners > Events
+      summary: show single event
+      security:
+        - bearerAuth: []
+      parameters:
         - name: id
           in: path
           schema:
