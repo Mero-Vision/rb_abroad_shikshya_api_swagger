@@ -54,6 +54,7 @@ tags:
   - name: Recruit Partners > Events
   - name: Recruit Partners > University
   - name: Recruit Partners > Courses
+  - name: Recruit Partners > Students
   - name: Website
   - name: Website > Contact Us
   - name: Website > Blog
@@ -508,9 +509,9 @@ paths:
                 designated_learning_institution_no:
                   type: string
                   example: 54rtrtt
-                commission_amount:
+                commission_percent:
                   type: integer
-                  example: '500'
+                  example: '50'
                 founded_in:
                   type: string
                   example: '2014-01-23'
@@ -550,6 +551,9 @@ paths:
                 gross_tuition:
                   type: string
                   example: $32,832.59 CAD / Year
+                currency:
+                  type: string
+                  example: CAD
       security:
         - bearerAuth: []
       parameters:
@@ -1499,8 +1503,6 @@ paths:
                 description:
                   type: string
                   example: vcxbcbc
-                currency:
-                  type: string
                 tuition_fee:
                   type: integer
                   example: '600'
@@ -1759,7 +1761,7 @@ paths:
                   example: hanciephago@gmail.com
                 password:
                   type: string
-                  example: password
+                  example: P@ssw0rd
       parameters:
         - name: Accept
           in: header
@@ -1784,10 +1786,10 @@ paths:
               properties:
                 name:
                   type: string
-                  example: Nitesh Hamal
+                  example: Hancie Phago
                 email:
                   type: string
-                  example: birukhadka155@gmail.com
+                  example: hanciephago@gmail.com
                 mobile_no:
                   type: integer
                   example: '454656'
@@ -1968,6 +1970,234 @@ paths:
           schema:
             type: string
           example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/agent/students:
+    post:
+      tags:
+        - Recruit Partners > Students
+      summary: store student data
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  example: Hancie
+                middle_name:
+                  type: string
+                  example: Wanem
+                last_name:
+                  type: string
+                  example: Phago
+                email:
+                  type: string
+                  example: hanciephago111@gmail.com
+                nationality:
+                  type: string
+                  example: Nepalese
+                mobile_no:
+                  type: integer
+                  example: '243434545'
+                merital_status:
+                  type: string
+                  example: Single
+                dob:
+                  type: string
+                  example: '2003-01-20'
+                country:
+                  type: string
+                  example: Nepal {Use Country API}
+                province:
+                  type: string
+                  example: Koshi Province {Use Province API}
+                district:
+                  type: string
+                  example: Jhapa
+                address:
+                  type: string
+                  example: Bhadrapur
+                agent_company_id:
+                  type: integer
+                  example: '1'
+                profile_image:
+                  type: string
+                  format: binary
+                passport_image:
+                  type: string
+                  format: binary
+                passport_number:
+                  type: integer
+                  example: '4545656'
+                passport_expiry_date:
+                  type: string
+                  example: '2020-01-20'
+                referral_source:
+                  type: string
+                  example: Facebook
+                country_of_education:
+                  type: string
+                  example: Nepal
+                highest_level_of_education:
+                  type: string
+                  example: Bachlor
+                grading_scheme:
+                  type: string
+                  example: GPA
+                average_grade:
+                  type: number
+                  example: '3.5'
+                test_type:
+                  type: string
+                  example: IELTS
+                date_of_exam:
+                  type: string
+                  example: '2023-01-20'
+                overall_score:
+                  type: number
+                  example: '7.9'
+                learning_score:
+                  type: number
+                  example: '6.7'
+                reading_score:
+                  type: number
+                  example: '6.6'
+                speaking_score:
+                  type: number
+                  example: '7.3'
+                writing_score:
+                  type: number
+                  example: '7.4'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Sat, 28 Sep 2024 17:02:41 GMT
+            Server:
+              schema:
+                type: string
+                example: Apache
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Vary:
+              schema:
+                type: string
+                example: Authorization
+            Upgrade:
+              schema:
+                type: string
+                example: h2,h2c
+            Connection:
+              schema:
+                type: string
+                example: Upgrade, Keep-Alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5, max=100
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 7
+                  name: Hancie Wanem Phago
+                  email: hanciephago111@gmail.com
+                  nationality: Nepalese
+                  mobile_no: '243434545'
+                  merital_status: Single
+                  dob: '2003-01-20'
+                  country: Nepal {Use Country API}
+                  province: Koshi Province {Use Province API}
+                  district: Jhapa
+                  address: Bhadrapur
+                  agent_company_id: '1'
+                  profile_image: https://api.rbabroads.com/storage/16/IMG_2816.jpg
+                  passport_image: https://api.rbabroads.com/storage/17/IMG_0658.JPG
+                  student_more_details:
+                    id: 5
+                    first_name: Hancie
+                    middle_name: Wanem
+                    last_name: Phago
+                    passport_number: '4545656'
+                    passport_expiry_date: '2020-01-20'
+                    referral_source: Facebook
+                    country_of_education: Nepal
+                    highest_level_of_education: Bachlor
+                    grading_scheme: GPA
+                    average_grade: '3.5'
+                    kyc_verification: pending
+                  student_test-scores:
+                    id: 5
+                    created_user_id: 2
+                    student_id: 7
+                    test_type: IELTS
+                    date_of_exam: '2023-01-20'
+                    overall_score: '7.9'
+                    learning_score: '6.7'
+                    reading_score: '6.6'
+                    speaking_score: '7.3'
+                    writing_score: '7.4'
+                    created_at: '2024-09-28T17:02:41.000000Z'
+                    updated_at: '2024-09-28T17:02:41.000000Z'
+                message: Student Verification Has Been Sent Successfully!
+    get:
+      tags:
+        - Recruit Partners > Students
+      summary: show all students
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: agent_company_id
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: pagination_limit
+          in: query
+          schema:
+            type: integer
+          example: '3'
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response

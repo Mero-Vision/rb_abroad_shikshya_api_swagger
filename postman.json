@@ -867,8 +867,8 @@
 											"type": "text"
 										},
 										{
-											"key": "commission_amount",
-											"value": "500",
+											"key": "commission_percent",
+											"value": "50",
 											"type": "text"
 										},
 										{
@@ -934,6 +934,11 @@
 										{
 											"key": "gross_tuition",
 											"value": "$32,832.59 CAD / Year",
+											"type": "text"
+										},
+										{
+											"key": "currency",
+											"value": "CAD",
 											"type": "text"
 										}
 									]
@@ -2858,11 +2863,6 @@
 											"type": "text"
 										},
 										{
-											"key": "currency",
-											"value": "",
-											"type": "text"
-										},
-										{
 											"key": "tuition_fee",
 											"value": "600",
 											"type": "text"
@@ -3332,7 +3332,7 @@
 										},
 										{
 											"key": "password",
-											"value": "password",
+											"value": "P@ssw0rd",
 											"type": "text"
 										}
 									]
@@ -3366,12 +3366,12 @@
 									"formdata": [
 										{
 											"key": "name",
-											"value": "Nitesh Hamal",
+											"value": "Hancie Phago",
 											"type": "text"
 										},
 										{
 											"key": "email",
-											"value": "birukhadka155@gmail.com",
+											"value": "hanciephago@gmail.com",
 											"type": "text"
 										},
 										{
@@ -3715,6 +3715,467 @@
 										"api",
 										"agent",
 										"university-courses"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Students",
+					"item": [
+						{
+							"name": "store student data",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "Hancie",
+											"type": "text"
+										},
+										{
+											"key": "middle_name",
+											"value": "Wanem",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "Phago",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "hanciephago111@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "nationality",
+											"value": "Nepalese",
+											"type": "text"
+										},
+										{
+											"key": "mobile_no",
+											"value": "243434545",
+											"type": "text"
+										},
+										{
+											"key": "merital_status",
+											"value": "Single",
+											"type": "text"
+										},
+										{
+											"key": "dob",
+											"value": "2003-01-20",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "Nepal {Use Country API}",
+											"type": "text"
+										},
+										{
+											"key": "province",
+											"value": "Koshi Province {Use Province API}",
+											"type": "text"
+										},
+										{
+											"key": "district",
+											"value": "Jhapa",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Bhadrapur",
+											"type": "text"
+										},
+										{
+											"key": "agent_company_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "profile_image",
+											"type": "file",
+											"src": "jkM_OrUiM/IMG_2816.jpg"
+										},
+										{
+											"key": "passport_image",
+											"type": "file",
+											"src": "0_7zzAyZ4/IMG_0658.JPG"
+										},
+										{
+											"key": "passport_number",
+											"value": "4545656",
+											"type": "text"
+										},
+										{
+											"key": "passport_expiry_date",
+											"value": "2020-01-20",
+											"type": "text"
+										},
+										{
+											"key": "referral_source",
+											"value": "Facebook",
+											"type": "text"
+										},
+										{
+											"key": "country_of_education",
+											"value": "Nepal",
+											"type": "text"
+										},
+										{
+											"key": "highest_level_of_education",
+											"value": "Bachlor",
+											"type": "text"
+										},
+										{
+											"key": "grading_scheme",
+											"value": "GPA",
+											"type": "text"
+										},
+										{
+											"key": "average_grade",
+											"value": "3.5",
+											"type": "text"
+										},
+										{
+											"key": "test_type",
+											"value": "IELTS",
+											"type": "text"
+										},
+										{
+											"key": "date_of_exam",
+											"value": "2023-01-20",
+											"type": "text"
+										},
+										{
+											"key": "overall_score",
+											"value": "7.9",
+											"type": "text"
+										},
+										{
+											"key": "learning_score",
+											"value": "6.7",
+											"type": "text"
+										},
+										{
+											"key": "reading_score",
+											"value": "6.6",
+											"type": "text"
+										},
+										{
+											"key": "speaking_score",
+											"value": "7.3",
+											"type": "text"
+										},
+										{
+											"key": "writing_score",
+											"value": "7.4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/agent/students",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"students"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "store student data",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "first_name",
+													"value": "Hancie",
+													"type": "text"
+												},
+												{
+													"key": "middle_name",
+													"value": "Wanem",
+													"type": "text"
+												},
+												{
+													"key": "last_name",
+													"value": "Phago",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "hanciephago111@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "nationality",
+													"value": "Nepalese",
+													"type": "text"
+												},
+												{
+													"key": "mobile_no",
+													"value": "243434545",
+													"type": "text"
+												},
+												{
+													"key": "merital_status",
+													"value": "Single",
+													"type": "text"
+												},
+												{
+													"key": "dob",
+													"value": "2003-01-20",
+													"type": "text"
+												},
+												{
+													"key": "country",
+													"value": "Nepal {Use Country API}",
+													"type": "text"
+												},
+												{
+													"key": "province",
+													"value": "Koshi Province {Use Province API}",
+													"type": "text"
+												},
+												{
+													"key": "district",
+													"value": "Jhapa",
+													"type": "text"
+												},
+												{
+													"key": "address",
+													"value": "Bhadrapur",
+													"type": "text"
+												},
+												{
+													"key": "agent_company_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "profile_image",
+													"type": "file",
+													"src": "jkM_OrUiM/IMG_2816.jpg"
+												},
+												{
+													"key": "passport_image",
+													"type": "file",
+													"src": "0_7zzAyZ4/IMG_0658.JPG"
+												},
+												{
+													"key": "passport_number",
+													"value": "4545656",
+													"type": "text"
+												},
+												{
+													"key": "passport_expiry_date",
+													"value": "2020-01-20",
+													"type": "text"
+												},
+												{
+													"key": "referral_source",
+													"value": "Facebook",
+													"type": "text"
+												},
+												{
+													"key": "country_of_education",
+													"value": "Nepal",
+													"type": "text"
+												},
+												{
+													"key": "highest_level_of_education",
+													"value": "Bachlor",
+													"type": "text"
+												},
+												{
+													"key": "grading_scheme",
+													"value": "GPA",
+													"type": "text"
+												},
+												{
+													"key": "average_grade",
+													"value": "3.5",
+													"type": "text"
+												},
+												{
+													"key": "test_type",
+													"value": "IELTS",
+													"type": "text"
+												},
+												{
+													"key": "date_of_exam",
+													"value": "2023-01-20",
+													"type": "text"
+												},
+												{
+													"key": "overall_score",
+													"value": "7.9",
+													"type": "text"
+												},
+												{
+													"key": "learning_score",
+													"value": "6.7",
+													"type": "text"
+												},
+												{
+													"key": "reading_score",
+													"value": "6.6",
+													"type": "text"
+												},
+												{
+													"key": "speaking_score",
+													"value": "7.3",
+													"type": "text"
+												},
+												{
+													"key": "writing_score",
+													"value": "7.4",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/agent/students",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"agent",
+												"students"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 28 Sep 2024 17:02:41 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Vary",
+											"value": "Authorization"
+										},
+										{
+											"key": "Upgrade",
+											"value": "h2,h2c"
+										},
+										{
+											"key": "Connection",
+											"value": "Upgrade, Keep-Alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 7,\n        \"name\": \"Hancie Wanem Phago\",\n        \"email\": \"hanciephago111@gmail.com\",\n        \"nationality\": \"Nepalese\",\n        \"mobile_no\": \"243434545\",\n        \"merital_status\": \"Single\",\n        \"dob\": \"2003-01-20\",\n        \"country\": \"Nepal {Use Country API}\",\n        \"province\": \"Koshi Province {Use Province API}\",\n        \"district\": \"Jhapa\",\n        \"address\": \"Bhadrapur\",\n        \"agent_company_id\": \"1\",\n        \"profile_image\": \"https://api.rbabroads.com/storage/16/IMG_2816.jpg\",\n        \"passport_image\": \"https://api.rbabroads.com/storage/17/IMG_0658.JPG\",\n        \"student_more_details\": {\n            \"id\": 5,\n            \"first_name\": \"Hancie\",\n            \"middle_name\": \"Wanem\",\n            \"last_name\": \"Phago\",\n            \"passport_number\": \"4545656\",\n            \"passport_expiry_date\": \"2020-01-20\",\n            \"referral_source\": \"Facebook\",\n            \"country_of_education\": \"Nepal\",\n            \"highest_level_of_education\": \"Bachlor\",\n            \"grading_scheme\": \"GPA\",\n            \"average_grade\": \"3.5\",\n            \"kyc_verification\": \"pending\"\n        },\n        \"student_test-scores\": {\n            \"id\": 5,\n            \"created_user_id\": 2,\n            \"student_id\": 7,\n            \"test_type\": \"IELTS\",\n            \"date_of_exam\": \"2023-01-20\",\n            \"overall_score\": \"7.9\",\n            \"learning_score\": \"6.7\",\n            \"reading_score\": \"6.6\",\n            \"speaking_score\": \"7.3\",\n            \"writing_score\": \"7.4\",\n            \"created_at\": \"2024-09-28T17:02:41.000000Z\",\n            \"updated_at\": \"2024-09-28T17:02:41.000000Z\"\n        }\n    },\n    \"message\": \"Student Verification Has Been Sent Successfully!\"\n}"
+								}
+							]
+						},
+						{
+							"name": "show all students",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/agent/students?agent_company_id=1&pagination_limit=3&search_keyword",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"students"
+									],
+									"query": [
+										{
+											"key": "agent_company_id",
+											"value": "1"
+										},
+										{
+											"key": "pagination_limit",
+											"value": "3"
+										},
+										{
+											"key": "search_keyword",
+											"value": null
+										}
 									]
 								}
 							},
