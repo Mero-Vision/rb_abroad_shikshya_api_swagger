@@ -4182,6 +4182,127 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Student Application",
+					"item": [
+						{
+							"name": "store student application",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "student_id",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "agent_company_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "university_id",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "course_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "apply_date",
+											"value": "2024-02-20",
+											"type": "text"
+										},
+										{
+											"key": "start_date",
+											"value": "2024-02-20",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/agent/student-applications",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"student-applications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show all student applications",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "agent-company-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/agent/student-applications?pagination_limit=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"student-applications"
+									],
+									"query": [
+										{
+											"key": "pagination_limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
