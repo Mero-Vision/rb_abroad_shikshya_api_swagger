@@ -487,6 +487,42 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "payment methods",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/master-data/payment-methods",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"master-data",
+										"payment-methods"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -4297,6 +4333,188 @@
 											"key": "pagination_limit",
 											"value": "5"
 										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dashboard",
+					"item": [
+						{
+							"name": "recruit partner dashboard",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "agent-company-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/agent/dashboard",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"dashboard"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Company Payment Option",
+					"item": [
+						{
+							"name": "store payment options",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "agent-company-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "payment_option_name",
+											"value": "Khalti1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/agent/company-payment-options",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"company-payment-options"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show company payment options",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "agent-company-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/agent/company-payment-options?pagination_limit=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"company-payment-options"
+									],
+									"query": [
+										{
+											"key": "pagination_limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete company payment option",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/agent/company-payment-options/{id}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"company-payment-options",
+										"{id}"
 									]
 								}
 							},

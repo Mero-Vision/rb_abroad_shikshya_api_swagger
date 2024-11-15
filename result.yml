@@ -56,6 +56,8 @@ tags:
   - name: Recruit Partners > Courses
   - name: Recruit Partners > Students
   - name: Recruit Partners > Student Application
+  - name: Recruit Partners > Dashboard
+  - name: Recruit Partners > Company Payment Option
   - name: Website
   - name: Website > Contact Us
   - name: Website > Blog
@@ -300,6 +302,24 @@ paths:
       tags:
         - Super Admin > Master Data
       summary: education levels
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/master-data/payment-methods:
+    get:
+      tags:
+        - Super Admin > Master Data
+      summary: payment methods
       security:
         - bearerAuth: []
       parameters:
@@ -2268,6 +2288,111 @@ paths:
           schema:
             type: integer
           example: '5'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/agent/dashboard:
+    get:
+      tags:
+        - Recruit Partners > Dashboard
+      summary: recruit partner dashboard
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: agent-company-id
+          in: header
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/agent/company-payment-options:
+    post:
+      tags:
+        - Recruit Partners > Company Payment Option
+      summary: store payment options
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                payment_option_name:
+                  type: string
+                  example: Khalti1
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: agent-company-id
+          in: header
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Recruit Partners > Company Payment Option
+      summary: show company payment options
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: agent-company-id
+          in: header
+          schema:
+            type: integer
+          example: '1'
+        - name: pagination_limit
+          in: query
+          schema:
+            type: integer
+          example: '5'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/agent/company-payment-options/{id}:
+    delete:
+      tags:
+        - Recruit Partners > Company Payment Option
+      summary: delete company payment option
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: Successful response
