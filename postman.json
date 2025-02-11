@@ -873,13 +873,8 @@
 											"type": "text"
 										},
 										{
-											"key": "country",
-											"value": "Canada",
-											"type": "text"
-										},
-										{
-											"key": "country_code",
-											"value": "CA",
+											"key": "country_id",
+											"value": "1",
 											"type": "text"
 										},
 										{
@@ -895,7 +890,10 @@
 										{
 											"key": "university_logo",
 											"type": "file",
-											"src": "5S4hRdN40/ICON Png.png"
+											"src": [
+												"5S4hRdN40/ICON Png.png",
+												"/C:/Users/Hanci/Downloads/IMG_1534_11zon.jpg"
+											]
 										},
 										{
 											"key": "designated_learning_institution_no",
@@ -3510,6 +3508,212 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Financial Requirements",
+					"item": [
+						{
+							"name": "store financial requirements",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"country_id\": 1,\r\n    \"country\": \"USA\",\r\n    \"financial_requirements\": [\r\n        {\r\n            \"name\": \"Monthly Fees\",\r\n            \"description\": \"Tuition Fees\"\r\n        },\r\n         {\r\n            \"name\": \"Exam Fees\",\r\n            \"description\": \"Exam Fees\"\r\n        }\r\n    ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/super-admin/financial-requirements",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"financial-requirements"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show all financial requirements",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/financial-requirements",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"financial-requirements"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show all financial requirements",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/super-admin/financial-requirements",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"super-admin",
+												"financial-requirements"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 25 Jan 2025 08:11:09 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 7,\n            \"name\": \"Monthly Fees\",\n            \"description\": \"Tuition Fees\",\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Afghanistan\",\n                \"currency\": \"AFN\",\n                \"phone\": \"93\",\n                \"capital\": \"Kabul\",\n                \"code\": \"AF\",\n                \"code3\": \"AFG\",\n                \"number\": \"4\",\n                \"created_at\": \"2025-01-25T06:56:38.000000Z\",\n                \"updated_at\": \"2025-01-25T06:56:38.000000Z\"\n            },\n            \"created_at\": \"2025-01-25T08:06:50.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Exam Fees\",\n            \"description\": \"Exam Fees\",\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Afghanistan\",\n                \"currency\": \"AFN\",\n                \"phone\": \"93\",\n                \"capital\": \"Kabul\",\n                \"code\": \"AF\",\n                \"code3\": \"AFG\",\n                \"number\": \"4\",\n                \"created_at\": \"2025-01-25T06:56:38.000000Z\",\n                \"updated_at\": \"2025-01-25T06:56:38.000000Z\"\n            },\n            \"created_at\": \"2025-01-25T08:06:50.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Tuition Fees\",\n            \"description\": \"Tuition Fees\",\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Afghanistan\",\n                \"currency\": \"AFN\",\n                \"phone\": \"93\",\n                \"capital\": \"Kabul\",\n                \"code\": \"AF\",\n                \"code3\": \"AFG\",\n                \"number\": \"4\",\n                \"created_at\": \"2025-01-25T06:56:38.000000Z\",\n                \"updated_at\": \"2025-01-25T06:56:38.000000Z\"\n            },\n            \"created_at\": \"2025-01-25T08:04:27.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": null,\n            \"description\": \"0\",\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Afghanistan\",\n                \"currency\": \"AFN\",\n                \"phone\": \"93\",\n                \"capital\": \"Kabul\",\n                \"code\": \"AF\",\n                \"code3\": \"AFG\",\n                \"number\": \"4\",\n                \"created_at\": \"2025-01-25T06:56:38.000000Z\",\n                \"updated_at\": \"2025-01-25T06:56:38.000000Z\"\n            },\n            \"created_at\": \"2025-01-25T08:03:38.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": null,\n            \"description\": \"0\",\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Afghanistan\",\n                \"currency\": \"AFN\",\n                \"phone\": \"93\",\n                \"capital\": \"Kabul\",\n                \"code\": \"AF\",\n                \"code3\": \"AFG\",\n                \"number\": \"4\",\n                \"created_at\": \"2025-01-25T06:56:38.000000Z\",\n                \"updated_at\": \"2025-01-25T06:56:38.000000Z\"\n            },\n            \"created_at\": \"2025-01-25T08:03:22.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": null,\n            \"description\": \"0\",\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Afghanistan\",\n                \"currency\": \"AFN\",\n                \"phone\": \"93\",\n                \"capital\": \"Kabul\",\n                \"code\": \"AF\",\n                \"code3\": \"AFG\",\n                \"number\": \"4\",\n                \"created_at\": \"2025-01-25T06:56:38.000000Z\",\n                \"updated_at\": \"2025-01-25T06:56:38.000000Z\"\n            },\n            \"created_at\": \"2025-01-25T08:03:15.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": null,\n            \"description\": \"0\",\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Afghanistan\",\n                \"currency\": \"AFN\",\n                \"phone\": \"93\",\n                \"capital\": \"Kabul\",\n                \"code\": \"AF\",\n                \"code3\": \"AFG\",\n                \"number\": \"4\",\n                \"created_at\": \"2025-01-25T06:56:38.000000Z\",\n                \"updated_at\": \"2025-01-25T06:56:38.000000Z\"\n            },\n            \"created_at\": \"2025-01-25T08:02:27.000000Z\"\n        },\n        {\n            \"id\": 1,\n            \"name\": null,\n            \"description\": \"0\",\n            \"country_id\": 1,\n            \"country\": {\n                \"id\": 1,\n                \"name\": \"Afghanistan\",\n                \"currency\": \"AFN\",\n                \"phone\": \"93\",\n                \"capital\": \"Kabul\",\n                \"code\": \"AF\",\n                \"code3\": \"AFG\",\n                \"number\": \"4\",\n                \"created_at\": \"2025-01-25T06:56:38.000000Z\",\n                \"updated_at\": \"2025-01-25T06:56:38.000000Z\"\n            },\n            \"created_at\": \"2025-01-25T08:02:19.000000Z\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Application Financial Requirement",
+					"item": [
+						{
+							"name": "update application financial requirement status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "rejected",
+											"type": "text"
+										},
+										{
+											"key": "review",
+											"value": "dfgfg",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/super-admin/application-financial-documents/status-update/{application_financial_requirement_id}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"application-financial-documents",
+										"status-update",
+										"{application_financial_requirement_id}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -3554,7 +3758,7 @@
 										},
 										{
 											"key": "password",
-											"value": "P@ssw0rd",
+											"value": "nitesh*12345678",
 											"type": "text"
 										}
 									]
@@ -3966,6 +4170,11 @@
 										"key": "Accept",
 										"value": "application/json",
 										"type": "text"
+									},
+									{
+										"key": "agent-company-id",
+										"value": "1",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -4079,41 +4288,6 @@
 										{
 											"key": "average_grade",
 											"value": "3.5",
-											"type": "text"
-										},
-										{
-											"key": "test_type",
-											"value": "IELTS",
-											"type": "text"
-										},
-										{
-											"key": "date_of_exam",
-											"value": "2023-01-20",
-											"type": "text"
-										},
-										{
-											"key": "overall_score",
-											"value": "7.9",
-											"type": "text"
-										},
-										{
-											"key": "learning_score",
-											"value": "6.7",
-											"type": "text"
-										},
-										{
-											"key": "reading_score",
-											"value": "6.6",
-											"type": "text"
-										},
-										{
-											"key": "speaking_score",
-											"value": "7.3",
-											"type": "text"
-										},
-										{
-											"key": "writing_score",
-											"value": "7.4",
 											"type": "text"
 										}
 									]
@@ -4373,10 +4547,15 @@
 										"key": "Accept",
 										"value": "application/json",
 										"type": "text"
+									},
+									{
+										"key": "agent-company-id",
+										"value": "1",
+										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "{{url}}/api/agent/students?agent_company_id=1&pagination_limit=3&search_keyword",
+									"raw": "{{url}}/api/agent/students?pagination_limit=3&search_keyword",
 									"host": [
 										"{{url}}"
 									],
@@ -4386,10 +4565,6 @@
 										"students"
 									],
 									"query": [
-										{
-											"key": "agent_company_id",
-											"value": "1"
-										},
 										{
 											"key": "pagination_limit",
 											"value": "3"
@@ -4434,7 +4609,7 @@
 									"formdata": [
 										{
 											"key": "student_id",
-											"value": "7",
+											"value": "3",
 											"type": "text"
 										},
 										{
@@ -4519,6 +4694,42 @@
 											"key": "pagination_limit",
 											"value": "5"
 										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show single student application data",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/agent/student-applications/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"student-applications",
+										"1"
 									]
 								}
 							},
@@ -4781,6 +4992,318 @@
 										"api",
 										"agent",
 										"student-payment"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Application Documents",
+					"item": [
+						{
+							"name": "store application documents",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "agent-company-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "application_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "requirement_category_documents_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "document_type",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "application_document_image[]",
+											"type": "file",
+											"src": "/C:/Users/Hanci/Downloads/IMG_1534_11zon.jpg"
+										},
+										{
+											"key": "application_document_image[]",
+											"type": "file",
+											"src": "/C:/Users/Hanci/Downloads/IMG_1534.JPG"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/agent/application-documents",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"application-documents"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update application document status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "approved",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/super-admin/application-documents/status-update/{id}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"application-documents",
+										"status-update",
+										"{id}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Student Scores",
+					"item": [
+						{
+							"name": "store student scores",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "student_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "test_type",
+											"value": "PTE",
+											"type": "text"
+										},
+										{
+											"key": "reading_score",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "listening_score",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "speaking_score",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "writing_score",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "overall_score",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "exam_date",
+											"value": "2024-01-20",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/agent/student-scores",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"student-scores"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show all student scores",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/agent/student-scores",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"student-scores"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Application Financial Requirements",
+					"item": [
+						{
+							"name": "store application financial requirement document",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "agent-company-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "application_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "financial_requirement_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "application_financial_document_image",
+											"type": "file",
+											"src": "/C:/Users/Hanci/Downloads/Sukrat restaurant and lodge.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/agent/application-financial-documents",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"application-financial-documents"
 									]
 								}
 							},
