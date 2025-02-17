@@ -53,6 +53,8 @@ tags:
   - name: Super Admin > Requirement Category Documents
   - name: Super Admin > Financial Requirements
   - name: Super Admin > Application Financial Requirement
+  - name: Super Admin > Visa Requirements
+  - name: Super Admin > Application Visa Requirements
   - name: Recruit Partners
   - name: Recruit Partners > Authentication
   - name: Recruit Partners > Events
@@ -66,6 +68,7 @@ tags:
   - name: Recruit Partners > Application Documents
   - name: Recruit Partners > Student Scores
   - name: Recruit Partners > Application Financial Requirements
+  - name: Recruit Partners > Application Visa Requirements
   - name: Website
   - name: Website > Contact Us
   - name: Website > Blog
@@ -2125,6 +2128,91 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/super-admin/visa-requirements:
+    post:
+      tags:
+        - Super Admin > Visa Requirements
+      summary: Store visa requirements
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                country_id: 1
+                visa_requirements:
+                  - name: Monthly Fees
+                    description: Tuition Fees
+                  - name: Exam Fees
+                    description: Exam Fees
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Super Admin > Visa Requirements
+      summary: show all visa requirements
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/application-visa-requirements/status-update/{application_visa_requirement_id}:
+    post:
+      tags:
+        - Super Admin > Application Visa Requirements
+      summary: update application visa requirements
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  example: rejected
+                review:
+                  type: string
+                  example: dfgfg
+                _method:
+                  type: string
+                  example: PUT
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: application_visa_requirement_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/agent-login:
     post:
       tags:
@@ -2772,7 +2860,7 @@ paths:
               properties:
                 application_id:
                   type: integer
-                  example: '67'
+                  example: '2'
                 student_id:
                   type: integer
                   example: '1'
@@ -2799,6 +2887,11 @@ paths:
           schema:
             type: string
           example: application/json
+        - name: agent-company-id
+          in: header
+          schema:
+            type: integer
+          example: '1'
       responses:
         '200':
           description: Successful response
@@ -2963,6 +3056,44 @@ paths:
                   type: integer
                   example: '1'
                 application_financial_document_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: agent-company-id
+          in: header
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/agent/application-visa-documents:
+    post:
+      tags:
+        - Recruit Partners > Application Visa Requirements
+      summary: store application visa requirements document
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                application_id:
+                  type: integer
+                  example: '1'
+                visa_requirement_id:
+                  type: integer
+                  example: '1'
+                application_visa_document_image:
                   type: string
                   format: binary
       security:
