@@ -3714,6 +3714,152 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Visa Requirements",
+					"item": [
+						{
+							"name": "Store visa requirements",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"country_id\": 1,\r\n    \"visa_requirements\": [\r\n        {\r\n            \"name\": \"Monthly Fees\",\r\n            \"description\": \"Tuition Fees\"\r\n        },\r\n         {\r\n            \"name\": \"Exam Fees\",\r\n            \"description\": \"Exam Fees\"\r\n        }\r\n    ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/super-admin/visa-requirements",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"visa-requirements"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show all visa requirements",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/visa-requirements",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"visa-requirements"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Application Visa Requirements",
+					"item": [
+						{
+							"name": "update application visa requirements",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "rejected",
+											"type": "text"
+										},
+										{
+											"key": "review",
+											"value": "dfgfg",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/super-admin/application-visa-requirements/status-update/{application_visa_requirement_id}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"application-visa-requirements",
+										"status-update",
+										"{application_visa_requirement_id}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -4941,6 +5087,11 @@
 										"key": "Accept",
 										"value": "application/json",
 										"type": "text"
+									},
+									{
+										"key": "agent-company-id",
+										"value": "1",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -4948,7 +5099,7 @@
 									"formdata": [
 										{
 											"key": "application_id",
-											"value": "67",
+											"value": "2",
 											"type": "text"
 										},
 										{
@@ -5304,6 +5455,71 @@
 										"api",
 										"agent",
 										"application-financial-documents"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Application Visa Requirements",
+					"item": [
+						{
+							"name": "store application visa requirements document",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "agent-company-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "application_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "visa_requirement_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "application_visa_document_image",
+											"type": "file",
+											"src": "/C:/Users/Hanci/Downloads/WhatsApp Image 2025-01-20 at 7.55.58 PM.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/agent/application-visa-documents",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"application-visa-documents"
 									]
 								}
 							},
