@@ -890,10 +890,7 @@
 										{
 											"key": "university_logo",
 											"type": "file",
-											"src": [
-												"5S4hRdN40/ICON Png.png",
-												"/C:/Users/Hanci/Downloads/IMG_1534_11zon.jpg"
-											]
+											"src": "/Users/hanciephago/Desktop/images.png"
 										},
 										{
 											"key": "designated_learning_institution_no",
@@ -2883,12 +2880,12 @@
 										},
 										{
 											"key": "university_id",
-											"value": "3",
+											"value": "1",
 											"type": "text"
 										},
 										{
-											"key": "program_level",
-											"value": "Undergruade Program",
+											"key": "program_level_id",
+											"value": "1",
 											"type": "text"
 										},
 										{
@@ -3860,6 +3857,121 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Application Enrollment Status",
+					"item": [
+						{
+							"name": "update application enrollment status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "accepted or cancelled",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/super-admin/application-enrollment-status/status-update/{student_application_id}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"application-enrollment-status",
+										"status-update",
+										"{student_application_id}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Commissions",
+					"item": [
+						{
+							"name": "show all commissions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/commissions?status=paid, pending&agent_id&university_id&course_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"commissions"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "paid, pending"
+										},
+										{
+											"key": "agent_id",
+											"value": null
+										},
+										{
+											"key": "university_id",
+											"value": null
+										},
+										{
+											"key": "course_id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -4765,7 +4877,7 @@
 										},
 										{
 											"key": "university_id",
-											"value": "6",
+											"value": "1",
 											"type": "text"
 										},
 										{
@@ -5526,6 +5638,57 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Commissions",
+					"item": [
+						{
+							"name": "show all commissions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "agent-company-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/agent/commissions?status=pending",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"commissions"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "pending"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -5757,6 +5920,10 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Student",
+			"item": []
 		}
 	]
 }
