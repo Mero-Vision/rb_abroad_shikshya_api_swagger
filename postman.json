@@ -3940,7 +3940,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/api/super-admin/commissions?status=paid, pending&agent_id&university_id&course_id",
+									"raw": "{{url}}/api/super-admin/commissions?status=paid, pending&agent_company_id&university_id&course_id",
 									"host": [
 										"{{url}}"
 									],
@@ -3955,7 +3955,7 @@
 											"value": "paid, pending"
 										},
 										{
-											"key": "agent_id",
+											"key": "agent_company_id",
 											"value": null
 										},
 										{
@@ -3966,6 +3966,112 @@
 											"key": "course_id",
 											"value": null
 										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show all commission withdraw request list",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/commission-withdrawals?pagination_limit=8&agent_company_id=1&currency=CAD",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"commission-withdrawals"
+									],
+									"query": [
+										{
+											"key": "pagination_limit",
+											"value": "8"
+										},
+										{
+											"key": "agent_company_id",
+											"value": "1"
+										},
+										{
+											"key": "currency",
+											"value": "CAD"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update commission withdraw status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "approved",
+											"type": "text"
+										},
+										{
+											"key": "remarks",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/super-admin/commission-withdrawals/1/status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"commission-withdrawals",
+										"1",
+										"status"
 									]
 								}
 							},
@@ -5669,7 +5775,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/api/agent/commissions?status=pending",
+									"raw": "{{url}}/api/agent/commissions",
 									"host": [
 										"{{url}}"
 									],
@@ -5677,12 +5783,62 @@
 										"api",
 										"agent",
 										"commissions"
-									],
-									"query": [
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "withdraw commission",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
 										{
-											"key": "status",
-											"value": "pending"
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
 										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "agent-company-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "amount",
+											"value": "200",
+											"type": "text"
+										},
+										{
+											"key": "currency",
+											"value": "CAD",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/agent/commission-withdrawals/request",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"agent",
+										"commission-withdrawals",
+										"request"
 									]
 								}
 							},

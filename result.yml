@@ -2270,7 +2270,7 @@ paths:
           schema:
             type: string
           example: paid, pending
-        - name: agent_id
+        - name: agent_company_id
           in: query
           schema:
             type: string
@@ -2282,6 +2282,71 @@ paths:
           in: query
           schema:
             type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/commission-withdrawals:
+    get:
+      tags:
+        - Super Admin > Commissions
+      summary: show all commission withdraw request list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: pagination_limit
+          in: query
+          schema:
+            type: integer
+          example: '8'
+        - name: agent_company_id
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: currency
+          in: query
+          schema:
+            type: string
+          example: CAD
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/commission-withdrawals/1/status:
+    post:
+      tags:
+        - Super Admin > Commissions
+      summary: update commission withdraw status
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  example: approved
+                remarks:
+                  type: string
+                _method:
+                  type: string
+                  example: PUT
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
       responses:
         '200':
           description: Successful response
@@ -3206,11 +3271,41 @@ paths:
           schema:
             type: integer
           example: '1'
-        - name: status
-          in: query
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/agent/commission-withdrawals/request:
+    post:
+      tags:
+        - Recruit Partners > Commissions
+      summary: withdraw commission
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: integer
+                  example: '200'
+                currency:
+                  type: string
+                  example: CAD
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
           schema:
             type: string
-          example: pending
+          example: application/json
+        - name: agent-company-id
+          in: header
+          schema:
+            type: integer
+          example: '1'
       responses:
         '200':
           description: Successful response
