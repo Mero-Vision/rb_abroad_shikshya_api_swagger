@@ -80,6 +80,10 @@ tags:
   - name: Website > Site Settings
   - name: Website > Testimonial
   - name: Student
+  - name: Student > Login
+  - name: Student > University
+  - name: Student > Courses
+  - name: Student > Student
 paths:
   /api/super-admin-login:
     post:
@@ -2604,7 +2608,7 @@ paths:
                   example: Phago
                 email:
                   type: string
-                  example: hanciephago111@gmail.com
+                  example: hanciewanemphago@gmail.com
                 nationality:
                   type: string
                   example: Nepalese
@@ -3437,6 +3441,116 @@ paths:
           schema:
             type: string
           example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/student/login:
+    post:
+      tags:
+        - Student > Login
+      summary: login
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: hanciewanemphago@gmail.com
+                password:
+                  type: string
+                  example: password
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/student/university:
+    get:
+      tags:
+        - Student > University
+      summary: show all university
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/student/university/{slug}:
+    get:
+      tags:
+        - Student > University
+      summary: show single university data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/student/university-courses:
+    get:
+      tags:
+        - Student > Courses
+      summary: show all courses
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/student/university-courses/{slug}:
+    get:
+      tags:
+        - Student > Courses
+      summary: show single course data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: slug
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: Successful response
