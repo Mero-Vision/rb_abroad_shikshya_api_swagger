@@ -3556,3 +3556,21 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/student/student-data/1:
+    get:
+      tags:
+        - Student > Student
+      summary: show single student data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
