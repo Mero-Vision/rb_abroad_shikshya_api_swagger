@@ -57,6 +57,7 @@ tags:
   - name: Super Admin > Application Visa Requirements
   - name: Super Admin > Application Enrollment Status
   - name: Super Admin > Commissions
+  - name: Super Admin > Student Applications
   - name: Recruit Partners
   - name: Recruit Partners > Authentication
   - name: Recruit Partners > Events
@@ -84,6 +85,7 @@ tags:
   - name: Student > University
   - name: Student > Courses
   - name: Student > Student
+  - name: Student > Student Application
 paths:
   /api/super-admin-login:
     post:
@@ -2356,6 +2358,84 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/super-admin/application-notes:
+    post:
+      tags:
+        - Recruit Partners > Student Application
+      summary: store application notes
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                application_id:
+                  type: integer
+                  example: '1'
+                title:
+                  type: string
+                  example: title
+                note:
+                  type: string
+                  example: note
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: agent-company-id
+          in: header
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/student-applications:
+    get:
+      tags:
+        - Super Admin > Student Applications
+      summary: show all student applications
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/student-applications/{id}:
+    get:
+      tags:
+        - Super Admin > Student Applications
+      summary: show single student application data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/agent-login:
     post:
       tags:
@@ -3561,6 +3641,24 @@ paths:
       tags:
         - Student > Student
       summary: show single student data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/student/student-applications:
+    get:
+      tags:
+        - Student > Student Application
+      summary: show application list
       security:
         - bearerAuth: []
       parameters:
