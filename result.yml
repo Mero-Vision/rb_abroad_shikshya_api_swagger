@@ -58,6 +58,9 @@ tags:
   - name: Super Admin > Application Enrollment Status
   - name: Super Admin > Commissions
   - name: Super Admin > Student Applications
+  - name: Super Admin > Track Applications
+  - name: Super Admin > My Students
+  - name: Super Admin > Roles and Permission
   - name: Recruit Partners
   - name: Recruit Partners > Authentication
   - name: Recruit Partners > Events
@@ -2436,6 +2439,74 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/super-admin/application-status/application-requirements/update-status/{id}:
+    post:
+      tags:
+        - Super Admin > Track Applications
+      summary: update application requirement status
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: PUT
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/my-students:
+    get:
+      tags:
+        - Super Admin > My Students
+      summary: show all my students
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/super-admin/roles:
+    get:
+      tags:
+        - Super Admin > Roles and Permission
+      summary: show all roles
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/agent-login:
     post:
       tags:
@@ -3636,11 +3707,115 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/student/student-data/1:
+  /api/student/student-data/3:
     get:
       tags:
         - Student > Student
       summary: show single student data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/student/student-signup:
+    post:
+      tags:
+        - Student > Student
+      summary: student signup
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  example: Hancie
+                middle_name:
+                  type: string
+                last_name:
+                  type: string
+                  example: Phago
+                email:
+                  type: string
+                  example: hancie@gmail.com
+                mobile_no:
+                  type: integer
+                  example: '98258214545'
+                dob:
+                  type: string
+                  example: '2002-04-35'
+                password:
+                  type: string
+                  example: Password
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/student/student-scores:
+    post:
+      tags:
+        - Student > Student
+      summary: store student scores
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                test_type:
+                  type: string
+                  example: PTE
+                reading_score:
+                  type: integer
+                  example: '8'
+                listening_score:
+                  type: integer
+                  example: '7'
+                speaking_score:
+                  type: integer
+                  example: '9'
+                writing_score:
+                  type: integer
+                  example: '9'
+                overall_score:
+                  type: integer
+                  example: '9'
+                exam_date:
+                  type: string
+                  example: '2024-01-20'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Student > Student
+      summary: show all student scores Copy
       security:
         - bearerAuth: []
       parameters:
