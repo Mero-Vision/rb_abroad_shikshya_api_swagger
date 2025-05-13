@@ -4209,6 +4209,139 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Track Applications",
+					"item": [
+						{
+							"name": "update application requirement status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/super-admin/application-status/application-requirements/update-status/{id}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"application-status",
+										"application-requirements",
+										"update-status",
+										"{id}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "My Students",
+					"item": [
+						{
+							"name": "show all my students",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/my-students",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"my-students"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Roles and Permission",
+					"item": [
+						{
+							"name": "show all roles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/super-admin/roles",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"super-admin",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -6493,7 +6626,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/api/student/student-data/1",
+									"raw": "{{url}}/api/student/student-data/3",
 									"host": [
 										"{{url}}"
 									],
@@ -6501,7 +6634,182 @@
 										"api",
 										"student",
 										"student-data",
-										"1"
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "student signup",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "Hancie",
+											"type": "text"
+										},
+										{
+											"key": "middle_name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "Phago",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "hancie@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "mobile_no",
+											"value": "98258214545",
+											"type": "text"
+										},
+										{
+											"key": "dob",
+											"value": "2002-04-35",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/student-signup",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"student-signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store student scores",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "test_type",
+											"value": "PTE",
+											"type": "text"
+										},
+										{
+											"key": "reading_score",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "listening_score",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "speaking_score",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "writing_score",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "overall_score",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "exam_date",
+											"value": "2024-01-20",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student/student-scores",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"student-scores"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show all student scores Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/student-scores",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"student-scores"
 									]
 								}
 							},
