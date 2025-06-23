@@ -90,6 +90,7 @@ tags:
   - name: Student > Student
   - name: Student > Student Application
   - name: Student > Site Settings
+  - name: Student > Event
 paths:
   /api/super-admin-login:
     post:
@@ -3946,7 +3947,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/student/university-courses/{slug}:
+  /api/student/university-courses/{id}:
     get:
       tags:
         - Student > Courses
@@ -3959,7 +3960,7 @@ paths:
           schema:
             type: string
           example: application/json
-        - name: slug
+        - name: id
           in: path
           schema:
             type: string
@@ -3987,7 +3988,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/student/student-data/3:
+  /api/student/student-data/{id}:
     get:
       tags:
         - Student > Student
@@ -4000,6 +4001,11 @@ paths:
           schema:
             type: string
           example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: Successful response
@@ -4165,6 +4171,83 @@ paths:
       tags:
         - Student > Site Settings
       summary: show all site settings
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/student/events:
+    get:
+      tags:
+        - Student > Event
+      summary: show all events
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/student/events/{id}:
+    get:
+      tags:
+        - Student > Event
+      summary: show single event data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/student/upcoming-events:
+    get:
+      tags:
+        - Student > Event
+      summary: upcoming events
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/student/past-events:
+    get:
+      tags:
+        - Student > Event
+      summary: show past events
       security:
         - bearerAuth: []
       parameters:
