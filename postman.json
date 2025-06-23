@@ -6993,7 +6993,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/api/student/university-courses/{slug}",
+									"raw": "{{url}}/api/student/university-courses/{id}",
 									"host": [
 										"{{url}}"
 									],
@@ -7001,7 +7001,7 @@
 										"api",
 										"student",
 										"university-courses",
-										"{slug}"
+										"{id}"
 									]
 								}
 							},
@@ -7069,7 +7069,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/api/student/student-data/3",
+									"raw": "{{url}}/api/student/student-data/{id}",
 									"host": [
 										"{{url}}"
 									],
@@ -7077,7 +7077,7 @@
 										"api",
 										"student",
 										"student-data",
-										"3"
+										"{id}"
 									]
 								}
 							},
@@ -7374,6 +7374,145 @@
 										"api",
 										"student",
 										"site-settings"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Event",
+					"item": [
+						{
+							"name": "show all events",
+							"request": {
+								"auth": {
+									"type": "bearer"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/events",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"events"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show single event data",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/events/{id}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"events",
+										"{id}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "upcoming events",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/upcoming-events",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"upcoming-events"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show past events",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/past-events",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"past-events"
 									]
 								}
 							},
